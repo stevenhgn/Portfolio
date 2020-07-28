@@ -1,26 +1,31 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+import { hot } from "react-hot-loader/root";
+import Home from "./pages/Home/Home";
+import styled from "styled-components";
+import { ThemeProvider } from "styled-components";
+import themes from "./shared/theme";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      theme: themes.standard,
+    };
+  }
+  render() {
+    return (
+      <ThemeProvider theme={this.state.theme}>
+        <AppWrapper className="App">
+          <Home />
+        </AppWrapper>
+      </ThemeProvider>
+    );
+  }
 }
 
-export default App;
+const AppWrapper = styled.div`
+  /* height: 100vh; */
+`;
+
+export default hot(App);
