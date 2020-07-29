@@ -2,12 +2,12 @@ import React, { forwardRef } from "react";
 import styled from "styled-components";
 import { spacing, palette, typography } from "@material-ui/system";
 import { ImageWrapper, StyledBox } from "../../shared/ContentWrapper";
-const Skills = forwardRef((props, ref) => {
+const Interest = forwardRef((props, ref) => {
   return (
-    <Wrapper ref={ref} className={"SkillsRoot"}>
+    <Wrapper ref={ref} className={"InterestRoot"}>
       <StyledBox p={10}>
         <StyledText color={"white"} pt={10}>
-          Skills {"&"} experience
+          Interest
         </StyledText>
       </StyledBox>
       {/* <ImageWrapper src={"/images/Aboutme.png"} alt="About me"></ImageWrapper> */}
@@ -30,4 +30,4 @@ const StyledText = styled.h1`
   ${typography}
   font-family: "Fira Sans";
 `;
-export default Skills;
+export default Interest;

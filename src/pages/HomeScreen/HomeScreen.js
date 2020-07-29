@@ -30,15 +30,18 @@ const Wrapper = styled.div`
   -o-background-size: cover;
   background-size: cover;
   object-fit: cover;
+  align-items: center;
 `;
 const MainPageText = styled.h1`
   ${spacing}
   ${palette}
   ${typography}
   font-weight:100;
-  position: absolute;
+  margin: 0 auto;
+  /* padding:20%; */
+  /* position: absolute;
   top: 50%;
-  left: 30%;
+  left: 30%; */
 `;
 
 export default HomeScreen;

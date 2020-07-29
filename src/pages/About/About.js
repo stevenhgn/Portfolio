@@ -6,8 +6,8 @@ import { ImageWrapper, StyledBox } from "../../shared/ContentWrapper";
 
 const About = forwardRef((props, ref) => {
   return (
-    <Wrapper ref={ref}>
-      <StyledBox p={20}>
+    <Wrapper ref={ref} className={"AboutRoot"}>
+      <StyledBox p={10}>
         <StyledText color={"white"} pt={10}>
           About me
         </StyledText>
@@ -32,6 +32,6 @@ const StyledText = styled.h1`
   ${spacing}
   ${palette}
   ${typography}
-  font-family: "Fira Sans"
+  font-family: "Fira Sans";
 `;
 export default About;
