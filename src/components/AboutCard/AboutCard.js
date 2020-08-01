@@ -8,7 +8,10 @@ import { continueStatement } from "@babel/types";
 const AboutCard = (props) => {
   return (
     <CardWrapper>
-      <IconWrapper component={props.component} fontSize={"large"}></IconWrapper>
+      <IconWrapper
+        component={props.component}
+        style={{ fontSize: "3vw" }}
+      ></IconWrapper>
       <StyledSpan color={props.color} style={{ fontSize: "3vw" }}>
         |
       </StyledSpan>
@@ -21,8 +24,8 @@ const CardWrapper = styled.div`
     ${palette}
     ${spacing}
     ${typography}
-    /* display:flex; */
-    /* flex-direction: row; */
+    display:flex; 
+     flex-direction: row;
     flex-wrap:wrap;
     /* align-items:center; */
     /* margin-left:auto; */
