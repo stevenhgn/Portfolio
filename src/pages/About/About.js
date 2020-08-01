@@ -34,7 +34,6 @@ const About = forwardRef((props, ref) => {
     </ContentWrapper>,
     <ContentWrapper flex={1}>
       <AboutCard
-        mt={10}
         component={FitnessCenter}
         key={2}
         color={"purple"}

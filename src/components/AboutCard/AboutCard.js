@@ -32,5 +32,6 @@ const IconWrapper = styled(Icon)`
   ${palette}
   ${spacing}
   ${typography}
+
 `;
 export default AboutCard;

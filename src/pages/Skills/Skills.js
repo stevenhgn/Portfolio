@@ -61,7 +61,7 @@ const Skills = forwardRef((props, ref) => {
   return (
     <Wrapper ref={ref} className={"SkillsRoot"}>
       <StyledBox pt={5} pl={5}>
-        <StyledText color={"white"} pt={10} fontSize={60}>
+        <StyledText color={"white"} fontSize={"4vw"}>
           Skills {"&"} Experience
         </StyledText>
       </StyledBox>
@@ -72,13 +72,12 @@ const Skills = forwardRef((props, ref) => {
           </Tooltip>
         </StyledIconButtonBack>
 
-        <SkillsCard className={"SkillCard-content"}>
+        <SkillsCard className={"SkillCard-content"} flexWrap={"wrap"}>
           <StyledBox
+            // flexGrow={"initial"}
             alignItems={"center"}
             flexWrap={"wrap"}
             flex={1}
-            mb={0}
-            // mr={"auto"}
           >
             <ImageWrapper
               src={skillsList[selectedSkills].imgLogo}
@@ -88,7 +87,7 @@ const Skills = forwardRef((props, ref) => {
             <StyledBox flexDirection={"column"} ml={2} justifyItems={"center"}>
               <StyledText
                 color={skillsList[selectedSkills].nameColor}
-                fontSize={"5vw"}
+                fontSize={"4vw"}
                 mt={1}
                 mb={1}
               >
@@ -104,7 +103,7 @@ const Skills = forwardRef((props, ref) => {
                 {skillsList[selectedSkills].date}
               </StyledSpan>
             </StyledBox>
-            <StyledBox alignItems={"center"} mb={4}>
+            <StyledBox alignItems={"center"}>
               <Tooltip
                 title={
                   <StyledSpan fontSize={"1.5vw"}>Last ned attest</StyledSpan>
@@ -137,7 +136,7 @@ const Skills = forwardRef((props, ref) => {
               style={{ alignItems: "center" }}
             >
               {skillsList[selectedSkills].techUsed.map((item, key) => (
-                <StyledPara fontSize={"1vw"} key={key}>
+                <StyledPara fontSize={"2.5vw"} key={key}>
                   {item}
                 </StyledPara>
               ))}
