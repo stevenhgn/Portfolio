@@ -61,7 +61,7 @@ const Skills = forwardRef((props, ref) => {
   return (
     <Wrapper ref={ref} className={"SkillsRoot"}>
       <StyledBox pt={5} pl={5}>
-        <StyledText color={"white"} fontSize={"4vw"}>
+        <StyledText color={"white"} fontSize={"4vw"} pt={"4vw"} pl={"2vw"}>
           Skills {"&"} Experience
         </StyledText>
       </StyledBox>
@@ -72,7 +72,11 @@ const Skills = forwardRef((props, ref) => {
           </Tooltip>
         </StyledIconButtonBack>
 
-        <SkillsCard className={"SkillCard-content"} flexWrap={"wrap"}>
+        <SkillsCard
+          className={"SkillCard-content"}
+          flexWrap={"wrap"}
+          pl={"4vw"}
+        >
           <StyledBox
             // flexGrow={"initial"}
             alignItems={"center"}
