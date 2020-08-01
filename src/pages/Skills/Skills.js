@@ -60,35 +60,42 @@ const Skills = forwardRef((props, ref) => {
   });
   return (
     <Wrapper ref={ref} className={"SkillsRoot"}>
-      <StyledBox pt={5} pl={8}>
+      <StyledBox pt={5} pl={5}>
         <StyledText color={"white"} pt={10} fontSize={60}>
           Skills {"&"} Experience
         </StyledText>
       </StyledBox>
-      <ContentWrapper id={"cardContentWrapper"} p={10} pt={1}>
+      <ContentWrapper id={"cardContentWrapper"} pt={1}>
         <StyledIconButtonBack onClick={handleOnArrowBack}>
           <Tooltip title={<StyledPara fontSize={"large"}>Previous</StyledPara>}>
-            <StyledArrowBack fontSize={"large"} />
+            <StyledArrowBack />
           </Tooltip>
         </StyledIconButtonBack>
 
-        <SkillsCard pl={20}>
-          <StyledBox alignItems={"center"} flexWrap={"wrap"} flex={1} mb={0}>
+        <SkillsCard className={"SkillCard-content"}>
+          <StyledBox
+            alignItems={"center"}
+            flexWrap={"wrap"}
+            flex={1}
+            mb={0}
+            // mr={"auto"}
+          >
             <ImageWrapper
               src={skillsList[selectedSkills].imgLogo}
               alt={"logo"}
+              // style={{ height: "100%", width: "100%" }}
             ></ImageWrapper>
             <StyledBox flexDirection={"column"} ml={2} justifyItems={"center"}>
               <StyledText
                 color={skillsList[selectedSkills].nameColor}
-                fontSize={60}
+                fontSize={"5vw"}
                 mt={1}
                 mb={1}
               >
                 {skillsList[selectedSkills].name}
               </StyledText>
               <StyledSpan
-                fontSize={20}
+                fontSize={"1.5vw"}
                 color={"white"}
                 mb={3}
                 ml={1}
@@ -99,24 +106,27 @@ const Skills = forwardRef((props, ref) => {
             </StyledBox>
             <StyledBox alignItems={"center"} mb={4}>
               <Tooltip
-                title={<StyledSpan fontSize={15}>Last ned attest</StyledSpan>}
+                title={
+                  <StyledSpan fontSize={"1.5vw"}>Last ned attest</StyledSpan>
+                }
               >
                 <StyledIconButton>
-                  <StyledGetAppIcon fontSize={"large"}></StyledGetAppIcon>
+                  <StyledGetAppIcon />
                 </StyledIconButton>
               </Tooltip>
             </StyledBox>
           </StyledBox>
 
           <StyledBox flexDirection={"row"} flex={2} color={"white"}>
-            <StyledBox flex={2} color={"white"} pr={4}>
+            <StyledBox flex={2} color={"white"} pr={4} pl={"auto"} mr={"auto"}>
               <StyledTextField
                 type="input"
                 label="Description"
-                variant="standard"
+                variant="filled"
                 multiline
                 fullWidth
-                InputProps={{ style: { fontSize: 25 } }}
+                rows={10}
+                InputProps={{ style: { fontSize: "1.5vw" } }}
                 disabled
                 value={skillsList[selectedSkills].description}
               ></StyledTextField>
@@ -127,16 +137,19 @@ const Skills = forwardRef((props, ref) => {
               style={{ alignItems: "center" }}
             >
               {skillsList[selectedSkills].techUsed.map((item, key) => (
-                <StyledPara fontSize={30} mb={5} mt={5} key={key}>
+                <StyledPara fontSize={"1vw"} key={key}>
                   {item}
                 </StyledPara>
               ))}
             </StyledBox>
           </StyledBox>
         </SkillsCard>
-        <StyledIconButtonForward onClick={handleOnArrowForward} flex={1}>
+        <StyledIconButtonForward
+          onClick={handleOnArrowForward}
+          className={"ButtonForward"}
+        >
           <Tooltip title={<StyledPara fontSize={"large"}>Next</StyledPara>}>
-            <StyledArrowForward fontSize={"large"} />
+            <StyledArrowForward />
           </Tooltip>
         </StyledIconButtonForward>
       </ContentWrapper>
@@ -156,6 +169,7 @@ const Wrapper = styled.div`
   flex: 1;
   height: 100vh;
   object-fit: cover;
+  width: 100vw;
   /* width: 100vw; */
 `;
 
@@ -173,6 +187,7 @@ const SkillsCard = styled.div`
   ${typography}
   display: flex;
   flex-direction: column;
+  justify-content:center;
   flex: 2;
 `;
 const StyledText = styled.h1`
@@ -190,11 +205,13 @@ const StyledIconButtonBack = styled(IconButton)`
   position: absolute;
   left:0;
   float: left;
-  .MuiSvgIcon-fontSizeLarge {
-    font-size: 6rem;
+  .MuiSvgIcon-root {
+    font-size: 5vw;
     &:hover {
       color: ${themes.standard.palette.primary};
     }
+  }
+  .MuiSvgIcon-fontSizeLarge {
   }
 `;
 const StyledIconButtonForward = styled(IconButton)`
@@ -204,8 +221,13 @@ const StyledIconButtonForward = styled(IconButton)`
   float: right;
   position: absolute;
   right:0;
+  .MuiSvgIcon-root {
+    font-size: 5vw;
+    &:hover {
+      color: ${themes.standard.palette.primary};
+    }
+  }
   .MuiSvgIcon-fontSizeLarge {
-    font-size: 6rem;
     &:hover {
       color: ${themes.standard.palette.primary};
     }

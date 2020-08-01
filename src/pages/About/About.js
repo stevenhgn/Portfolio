@@ -1,4 +1,4 @@
-import React, { forwardRef } from "react";
+import React, { forwardRef, Fragment } from "react";
 import styled from "styled-components";
 import { spacing, palette, typography } from "@material-ui/system";
 import {
@@ -12,12 +12,41 @@ import {
   StyledFragment,
 } from "../../shared/ContentWrapper";
 import AboutCard from "../../components/AboutCard/AboutCard";
-
+import School from "@material-ui/icons/School";
+import BusinessCenter from "@material-ui/icons/BusinessCenter";
+import FitnessCenter from "@material-ui/icons/FitnessCenter";
+import Flight from "@material-ui/icons/Flight";
 const About = forwardRef((props, ref) => {
-  const aboutCard = [<AboutCard />, <AboutCard />, <AboutCard />];
+  const aboutCard = [
+    <ContentWrapper flex={1}>
+      <AboutCard
+        component={School}
+        color={"lightCoral"}
+        title={"Master student"}
+        key={0}
+      />
+      <AboutCard
+        component={BusinessCenter}
+        color={"lightCoral"}
+        title={"Part-time developer"}
+        key={1}
+      />
+    </ContentWrapper>,
+    <ContentWrapper flex={1}>
+      <AboutCard
+        mt={10}
+        component={FitnessCenter}
+        key={2}
+        color={"purple"}
+        title={"Powerlifter"}
+      />
+      <AboutCard component={Flight} color={"purple"} title={"Travel"} key={3} />
+    </ContentWrapper>,
+    <ContentWrapper flex={1}></ContentWrapper>,
+  ];
   return (
     <Wrapper ref={ref} className={"AboutRoot"}>
-      <StyledBox flexDirection={"row"} className={"Title&logo"} pl={20} pt={20}>
+      <StyledBox flexDirection={"row"} className={"Title&logo"} pl={5} pt={20}>
         <StyledBox flexWrap={"wrap"}>
           <ImageWrapper
             src={"logo/profile-logo.png"}
@@ -31,7 +60,7 @@ const About = forwardRef((props, ref) => {
           ml={2}
           style={{ alignSelf: "center" }}
         >
-          <StyledText color={"white"} fontSize={60} mt={1} mb={1}>
+          <StyledText color={"white"} fontSize={"6vw"} mt={1} mb={1}>
             About me
           </StyledText>
           <StyledSpan
@@ -46,9 +75,23 @@ const About = forwardRef((props, ref) => {
           </StyledSpan>
         </StyledBox>
       </StyledBox>
-      <SkillsCard ml={20} pl={20} color={"white"}>
-        {aboutCard}
-      </SkillsCard>
+      <StyledBox flexDirection={"row"} flexWrap={"wrap"}>
+        <SkillsCard
+          ml={5}
+          pl={5}
+          color={"white"}
+          className={"About-card"}
+          style={{ marginRight: "auto" }}
+        >
+          {aboutCard}
+        </SkillsCard>
+        <StyledBox flex={2}>
+          <ImageWrapper
+            src={"images/Aboutme_activities.png"}
+            style={{ width: "100%", height: "100%" }}
+          ></ImageWrapper>
+        </StyledBox>
+      </StyledBox>
     </Wrapper>
   );
 });
@@ -82,7 +125,7 @@ const SkillsCard = styled.div`
   ${typography}
   display: flex;
   flex-direction: column;
-  /* flex:1; */
+  flex:2;
   flex-wrap:wrap;
 
 `;

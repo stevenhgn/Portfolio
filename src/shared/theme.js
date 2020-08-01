@@ -17,11 +17,11 @@ const themes = {
       lighterGreen: "#8FBC8F",
       darkGreen: "2D660B",
       // content colour
-      purple: "#915AD5",
+      purple: "#6459DB",
       orange: "#ffa626",
       red: "#e94454",
       contentRed: "#E70641",
-      lightCoral: "#F08080",
+      lightCoral: "#FA6E6E",
       borderGrey: "#DDDDDD",
       lightGrey: "#D3D3D3",
     },

@@ -3,14 +3,16 @@ import styled from "styled-components";
 import { spacing, palette, typography } from "@material-ui/system";
 import { Icon, SvgIcon } from "@material-ui/core";
 import { StyledSpan, StyledH1 } from "../../shared/StyledTypography";
-import School from "@material-ui/icons/School";
+import { continueStatement } from "@babel/types";
 
-const AboutCard = () => {
+const AboutCard = (props) => {
   return (
     <CardWrapper>
-      <IconWrapper component={School} fontSize={"large"}></IconWrapper>
-      <StyledSpan style={{ fontSize: "3vw" }}> |</StyledSpan>
-      <StyledSpan style={{ fontSize: "3vw" }}>Master student</StyledSpan>
+      <IconWrapper component={props.component} fontSize={"large"}></IconWrapper>
+      <StyledSpan color={props.color} style={{ fontSize: "3vw" }}>
+        |
+      </StyledSpan>
+      <StyledSpan style={{ fontSize: "3vw" }}>{props.title}</StyledSpan>
     </CardWrapper>
   );
 };
@@ -19,18 +21,16 @@ const CardWrapper = styled.div`
     ${palette}
     ${spacing}
     ${typography}
-    display:flex;
-    flex-direction: row;
+    /* display:flex; */
+    /* flex-direction: row; */
     flex-wrap:wrap;
-    align-items:center;
-    /* flex: 5; */
+    /* align-items:center; */
+    /* margin-left:auto; */
+    margin-right:auto;
 `;
 const IconWrapper = styled(Icon)`
   ${palette}
   ${spacing}
   ${typography}
-  .MuiIcon-fontSizeLarge{
-    font-size: 5rem;
-  }
 `;
 export default AboutCard;

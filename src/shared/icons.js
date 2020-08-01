@@ -11,13 +11,23 @@ const StyledGetAppIcon = styled(GetAppIcon)`
   ${palette}
   ${typography}
   color:white;
+  .MuiSvgIcon-root {
+    font-size: 5vw;
+  }
 `;
 const StyledIconButton = styled(IconButton)`
   ${spacing}
   ${palette}
   ${typography}
+  .MuiSvgIcon-root {
+    font-size:5vw;
+    &:hover {
+      color: lightgreen;
+      opacity:100%;
+    }
+  }
   .MuiSvgIcon-fontSizeLarge {
-    font-size: 4rem;
+    /* font-size: 4rem; */
     &:hover {
       color: ${themes.standard.palette.primary};
       opacity:100%;
