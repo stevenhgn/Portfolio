@@ -7,8 +7,8 @@ import { ImageWrapper } from "../../shared/ContentWrapper";
 const HomeScreen = forwardRef((props, ref) => {
   return (
     <Wrapper ref={ref}>
-      <MainPageText color={"white"} fontSize={"80px"}>
-        a portfolio
+      <MainPageText color={"lightgrey"} fontSize={"80px"}>
+        a portfolio.
       </MainPageText>
       {/* <ImageWrapper
         src={"/images/Background.png"}
@@ -24,6 +24,7 @@ const Wrapper = styled.div`
   display:flex;
   flex: 1;
   height: 100vh;
+  /* width: 100vw; */
   background: url("/images/Background.png") no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -38,6 +39,7 @@ const MainPageText = styled.h1`
   ${typography}
   font-weight:100;
   margin: 0 auto;
+  margin-left:25%;
   /* padding:20%; */
   /* position: absolute;
   top: 50%;

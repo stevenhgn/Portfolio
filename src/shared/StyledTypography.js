@@ -10,6 +10,12 @@ const StyledH1 = styled.h1`
   ${spacing}
   ${palette}
   ${typography}
+  `;
+
+const StyledSpan = styled.span`
+${spacing}
+${palette}
+${typography}
 `;
 
-export { StyledPara, StyledH1 };
+export { StyledPara, StyledH1, StyledSpan };

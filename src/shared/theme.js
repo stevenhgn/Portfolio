@@ -20,6 +20,7 @@ const themes = {
       purple: "#915AD5",
       orange: "#ffa626",
       red: "#e94454",
+      contentRed: "#E70641",
       lightCoral: "#F08080",
       borderGrey: "#DDDDDD",
       lightGrey: "#D3D3D3",

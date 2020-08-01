@@ -16,16 +16,10 @@ class App extends React.Component {
   render() {
     return (
       <ThemeProvider theme={this.state.theme}>
-        <AppWrapper className="App">
-          <Home />
-        </AppWrapper>
+        <Home />
       </ThemeProvider>
     );
   }
 }
-
-const AppWrapper = styled.div`
-  /* height: 100vh; */
-`;
 
 export default hot(App);
