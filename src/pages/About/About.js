@@ -18,7 +18,7 @@ import FitnessCenter from "@material-ui/icons/FitnessCenter";
 import Flight from "@material-ui/icons/Flight";
 const About = forwardRef((props, ref) => {
   const aboutCard = [
-    <ContentWrapper flex={1}>
+    <ContentWrapper flex={1} key={0}>
       <AboutCard
         component={School}
         color={"lightCoral"}
@@ -32,7 +32,7 @@ const About = forwardRef((props, ref) => {
         key={1}
       />
     </ContentWrapper>,
-    <ContentWrapper flex={1}>
+    <ContentWrapper flex={1} key={1}>
       <AboutCard
         component={FitnessCenter}
         key={2}
@@ -41,7 +41,7 @@ const About = forwardRef((props, ref) => {
       />
       <AboutCard component={Flight} color={"purple"} title={"Travel"} key={3} />
     </ContentWrapper>,
-    <ContentWrapper flex={1}></ContentWrapper>,
+    <ContentWrapper flex={1} key={2}></ContentWrapper>,
   ];
   return (
     <Wrapper ref={ref} className={"AboutRoot"}>

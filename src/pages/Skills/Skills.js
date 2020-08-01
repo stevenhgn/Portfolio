@@ -77,51 +77,55 @@ const Skills = forwardRef((props, ref) => {
           flexWrap={"wrap"}
           pl={"4vw"}
         >
-          <StyledBox
-            // flexGrow={"initial"}
-            alignItems={"center"}
-            flexWrap={"wrap"}
-            flex={1}
-          >
-            <ImageWrapper
-              src={skillsList[selectedSkills].imgLogo}
-              alt={"logo"}
-              // style={{ height: "100%", width: "100%" }}
-            ></ImageWrapper>
-            <StyledBox flexDirection={"column"} ml={2} justifyItems={"center"}>
-              <StyledText
-                color={skillsList[selectedSkills].nameColor}
-                fontSize={"4vw"}
-                mt={1}
-                mb={1}
+          <StyledBox flexDirection={"column"} flex={4} color={"white"}>
+            <StyledBox
+              // flexGrow={"initial"}
+              alignItems={"center"}
+              flexWrap={"wrap"}
+              flex={1}
+            >
+              <ImageWrapper
+                src={skillsList[selectedSkills].imgLogo}
+                alt={"logo"}
+                // style={{ height: "100%", width: "100%" }}
+              ></ImageWrapper>
+              <StyledBox
+                flexDirection={"column"}
+                ml={2}
+                justifyItems={"center"}
               >
-                {skillsList[selectedSkills].name}
-              </StyledText>
-              <StyledSpan
-                fontSize={"1.5vw"}
-                color={"white"}
-                mb={3}
-                ml={1}
-                style={{ float: "left" }}
-              >
-                {skillsList[selectedSkills].date}
-              </StyledSpan>
+                <StyledText
+                  color={skillsList[selectedSkills].nameColor}
+                  fontSize={"4vw"}
+                  mt={1}
+                  mb={1}
+                >
+                  {skillsList[selectedSkills].name}
+                </StyledText>
+                <StyledSpan
+                  fontSize={"1.5vw"}
+                  color={"white"}
+                  mb={3}
+                  ml={1}
+                  style={{ float: "left" }}
+                >
+                  {skillsList[selectedSkills].date}
+                </StyledSpan>
+              </StyledBox>
+              <StyledBox alignItems={"center"}>
+                <Tooltip
+                  title={
+                    <StyledSpan fontSize={"1.5vw"}>Last ned attest</StyledSpan>
+                  }
+                >
+                  <StyledIconButton>
+                    <StyledGetAppIcon />
+                  </StyledIconButton>
+                </Tooltip>
+              </StyledBox>
             </StyledBox>
-            <StyledBox alignItems={"center"}>
-              <Tooltip
-                title={
-                  <StyledSpan fontSize={"1.5vw"}>Last ned attest</StyledSpan>
-                }
-              >
-                <StyledIconButton>
-                  <StyledGetAppIcon />
-                </StyledIconButton>
-              </Tooltip>
-            </StyledBox>
-          </StyledBox>
 
-          <StyledBox flexDirection={"row"} flex={2} color={"white"}>
-            <StyledBox flex={4} color={"white"} pr={4} pl={"auto"} mr={"auto"}>
+            <StyledBox flex={1} color={"white"} pr={4} pl={"auto"} mb={"5vw"}>
               <StyledTextField
                 type="input"
                 label="Description"
@@ -134,17 +138,21 @@ const Skills = forwardRef((props, ref) => {
                 value={skillsList[selectedSkills].description}
               ></StyledTextField>
             </StyledBox>
-            <StyledBox
-              flex={2}
-              flexDirection={"column"}
-              style={{ alignItems: "center" }}
-            >
-              {skillsList[selectedSkills].techUsed.map((item, key) => (
-                <StyledPara fontSize={"2.5vw"} key={key}>
-                  {item}
-                </StyledPara>
-              ))}
-            </StyledBox>
+          </StyledBox>
+          <StyledBox
+            flex={2}
+            flexDirection={"column"}
+            style={{
+              alignItems: "center",
+              alignSelf: "center",
+              color: "white",
+            }}
+          >
+            {skillsList[selectedSkills].techUsed.map((item, key) => (
+              <StyledPara fontSize={"2.5vw"} key={key}>
+                {item}
+              </StyledPara>
+            ))}
           </StyledBox>
         </SkillsCard>
         <StyledIconButtonForward
@@ -189,14 +197,14 @@ const SkillsCard = styled.div`
   ${palette}
   ${typography}
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content:center;
   flex: 2;
 `;
 const StyledText = styled.h1`
-${spacing}
-${palette}
-${typography}
+  ${spacing}
+  ${palette}
+  ${typography}
   font-weight: 500;
   font-family: "Fira Sans";
 `;
