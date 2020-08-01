@@ -150,7 +150,7 @@ const Home = () => {
             <LinkWrapper to={"/"}>
               <StyledBox
                 color={"white"}
-                fontSize={"20px"}
+                fontSize={"2vw"}
                 onClick={() => scrollToRef(homeScreenRef)}
               >
                 Steven Nguyen
@@ -158,29 +158,33 @@ const Home = () => {
             </LinkWrapper>
             <HeaderWrapper pr={5}>
               <LinkWrapper
-                pl={5}
+                pl={"2vw"}
                 to={"/Aboutme"}
+                // fontSize={"2vw"}
                 onClick={() => scrollToRef(aboutRef)}
               >
                 <StyledBox color={"white"}>About me</StyledBox>
               </LinkWrapper>
               <LinkWrapper
-                pl={5}
+                pl={"2vw"}
                 to={"/Skill-Experience"}
+                // fontSize={"2vw"}
                 onClick={() => scrollToRef(skillsRef)}
               >
                 <StyledBox color={"white"}>Skills {"&"} Experience</StyledBox>
               </LinkWrapper>
               <LinkWrapper
-                pl={5}
+                pl={"2vw"}
                 to={"/Skill-Experience"}
+                // fontSize={"2vw"}
                 onClick={() => scrollToRef(interestRef)}
               >
                 <StyledBox color={"white"}>Interest</StyledBox>
               </LinkWrapper>
               <LinkWrapper
-                pl={5}
+                pl={"2vw"}
                 to={"/Contact"}
+                // fontSize={"2vw"}
                 // onClick={() => scrollToRef()}
               >
                 <StyledBox color={"white"}>Contact</StyledBox>

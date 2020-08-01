@@ -44,8 +44,13 @@ const About = forwardRef((props, ref) => {
     <ContentWrapper flex={1}></ContentWrapper>,
   ];
   return (
-    <Wrapper ref={ref} className={"AboutRoot"} pl={"4vw"}>
-      <StyledBox flexDirection={"row"} className={"Title&logo"} pl={5} pt={20}>
+    <Wrapper ref={ref} className={"AboutRoot"}>
+      <StyledBox
+        flexDirection={"row"}
+        className={"Title&logo"}
+        pt={20}
+        pl={"5vw"}
+      >
         <StyledBox flexWrap={"wrap"}>
           <ImageWrapper
             src={"logo/profile-logo.png"}
@@ -63,10 +68,9 @@ const About = forwardRef((props, ref) => {
             About me
           </StyledText>
           <StyledSpan
-            fontSize={20}
+            fontSize={"2vw"}
             color={"white"}
             mb={3}
-            ml={1}
             style={{ fontWeight: "300" }}
           >
             An active computer science student at UiO with <br /> great
@@ -77,7 +81,7 @@ const About = forwardRef((props, ref) => {
       <StyledBox flexDirection={"row"} flexWrap={"wrap"}>
         <SkillsCard
           ml={5}
-          pl={5}
+          pl={"5vw"}
           color={"white"}
           className={"About-card"}
           style={{ marginRight: "auto" }}

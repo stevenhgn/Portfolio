@@ -60,7 +60,7 @@ const Skills = forwardRef((props, ref) => {
   });
   return (
     <Wrapper ref={ref} className={"SkillsRoot"}>
-      <StyledBox pt={5} pl={5}>
+      <StyledBox pt={5} pl={"3vw"}>
         <StyledText color={"white"} fontSize={"4vw"} pt={"4vw"} pl={"2vw"}>
           Skills {"&"} Experience
         </StyledText>
@@ -121,7 +121,7 @@ const Skills = forwardRef((props, ref) => {
           </StyledBox>
 
           <StyledBox flexDirection={"row"} flex={2} color={"white"}>
-            <StyledBox flex={2} color={"white"} pr={4} pl={"auto"} mr={"auto"}>
+            <StyledBox flex={4} color={"white"} pr={4} pl={"auto"} mr={"auto"}>
               <StyledTextField
                 type="input"
                 label="Description"
@@ -129,7 +129,7 @@ const Skills = forwardRef((props, ref) => {
                 multiline
                 fullWidth
                 rows={10}
-                InputProps={{ style: { fontSize: "1.5vw" } }}
+                InputProps={{ style: { fontSize: "2vw" } }}
                 disabled
                 value={skillsList[selectedSkills].description}
               ></StyledTextField>
@@ -162,7 +162,7 @@ const Skills = forwardRef((props, ref) => {
 const Wrapper = styled.div`
   ${spacing}
   ${palette}
-  background: url("/images/Skills_expe.png") no-repeat;
+  background: url("/images/Skills_expe.png") no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -171,8 +171,8 @@ const Wrapper = styled.div`
   flex-direction: column;
   flex: 1;
   height: 100vh;
-  object-fit: cover;
   width: 100vw;
+  object-fit: cover;
   /* width: 100vw; */
 `;
 
