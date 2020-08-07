@@ -25,7 +25,7 @@ const Wrapper = styled.div`
   flex: 1;
   height: 100vh;
   /* width: 100vw; */
-  background: url("/images/Background.png") no-repeat center center fixed;
+  background: url("/images/Background.png") no-repeat;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;

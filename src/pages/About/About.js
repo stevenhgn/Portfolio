@@ -88,7 +88,10 @@ const About = forwardRef((props, ref) => {
         >
           {aboutCard}
         </SkillsCard>
-        <StyledBox flex={2}>
+        <StyledBox flex={2} flexDirection={"column"} alignItems={"center"}>
+          <StyledSpan color={"lightpurple"} fontSize={"3vw"} mb={"1vw"}>
+            Free time activities
+          </StyledSpan>
           <ImageWrapper
             src={"images/Aboutme_activities.png"}
             style={{ width: "100%", height: "100%" }}
@@ -102,7 +105,7 @@ const About = forwardRef((props, ref) => {
 const Wrapper = styled.div`
   ${spacing}
   ${palette}
-  background: url("/images/Aboutme.png") no-repeat center center fixed;
+  background: url("/images/Aboutme.png") no-repeat;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;

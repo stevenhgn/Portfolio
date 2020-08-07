@@ -18,6 +18,7 @@ const themes = {
       darkGreen: "2D660B",
       // content colour
       purple: "#6459DB",
+      lightpurple: "#D0CFFE",
       orange: "#ffa626",
       red: "#e94454",
       contentRed: "#E70641",

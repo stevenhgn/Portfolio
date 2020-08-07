@@ -1,12 +1,14 @@
 import React, { forwardRef, useState } from "react";
 import styled from "styled-components";
 import { spacing, palette, typography } from "@material-ui/system";
+import media from "styled-media-query";
 import {
   ImageWrapper,
   StyledBox,
   StyledTextField,
+  StyledTextFieldMediaPhone,
 } from "../../shared/ContentWrapper";
-import { IconButton, Tooltip } from "@material-ui/core";
+import { IconButton, Tooltip, Box } from "@material-ui/core";
 import ArrowBackIos from "@material-ui/icons/ArrowBackIos";
 import ArrowForwardIos from "@material-ui/icons/ArrowForwardIos";
 import NavigateNext from "@material-ui/icons/NavigateNext";
@@ -78,12 +80,7 @@ const Skills = forwardRef((props, ref) => {
           pl={"4vw"}
         >
           <StyledBox flexDirection={"column"} flex={4} color={"white"}>
-            <StyledBox
-              // flexGrow={"initial"}
-              alignItems={"center"}
-              flexWrap={"wrap"}
-              flex={1}
-            >
+            <StyledBox alignItems={"center"} flexWrap={"wrap"} mb={"2vw"}>
               <ImageWrapper
                 src={skillsList[selectedSkills].imgLogo}
                 alt={"logo"}
@@ -125,21 +122,36 @@ const Skills = forwardRef((props, ref) => {
               </StyledBox>
             </StyledBox>
 
-            <StyledBox flex={1} color={"white"} pr={4} pl={"auto"} mb={"5vw"}>
-              <StyledTextField
+            <StyledBox flex={1} color={"white"} pl={"auto"} mb={"5vw"}>
+              <StyledTextFieldMediaPhone
                 type="input"
                 label="Description"
                 variant="filled"
                 multiline
                 fullWidth
                 rows={10}
-                InputProps={{ style: { fontSize: "2vw" } }}
+                // InputProps={{ style: { fontSize: "2vw"} }}
                 disabled
                 value={skillsList[selectedSkills].description}
-              ></StyledTextField>
+              ></StyledTextFieldMediaPhone>
             </StyledBox>
+            <StyledMediaBoxPhone
+              flex={2}
+              flexDirection={"column"}
+              style={{
+                alignItems: "center",
+                alignSelf: "center",
+                color: "white",
+              }}
+            >
+              {skillsList[selectedSkills].techUsed.map((item, key) => (
+                <StyledPara fontSize={"5vw"} key={key}>
+                  {item}
+                </StyledPara>
+              ))}
+            </StyledMediaBoxPhone>
           </StyledBox>
-          <StyledBox
+          <StyledMediaBoxDesktop
             flex={2}
             flexDirection={"column"}
             style={{
@@ -153,7 +165,7 @@ const Skills = forwardRef((props, ref) => {
                 {item}
               </StyledPara>
             ))}
-          </StyledBox>
+          </StyledMediaBoxDesktop>
         </SkillsCard>
         <StyledIconButtonForward
           onClick={handleOnArrowForward}
@@ -170,7 +182,7 @@ const Skills = forwardRef((props, ref) => {
 const Wrapper = styled.div`
   ${spacing}
   ${palette}
-  background: url("/images/Skills_expe.png") no-repeat center center fixed;
+  background: url("/images/Skills_expe.png") no-repeat;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -182,6 +194,80 @@ const Wrapper = styled.div`
   width: 100vw;
   object-fit: cover;
   /* width: 100vw; */
+`;
+
+const StyledMediaBoxDesktop = styled(Box)`
+${spacing}
+  ${palette}
+  ${typography}
+  /* flex-wrap: wrap; */
+    display:none;
+    flex-direction: 'row';
+  ${media.greaterThan("large")`
+  /* screen width is greater than 1170px (large) */
+    display: flex;
+  `}
+    ${media.lessThan("medium")`
+    /* screen width is less than 768px (medium) */
+    height: 20%;
+    display:none;
+    `}
+  ${media.between("medium", "large")`
+    /* screen width is between 768px (medium) and 1170px (large) */
+    height: 40%;
+    display:none;
+    /* width: 40%; */
+    `}
+`;
+const StyledMediaBoxPhone = styled(Box)`
+${spacing}
+  ${palette}
+  ${typography}
+  /* flex-wrap: wrap; */
+  display:none;
+  /* display: flex; */
+  flex-direction: 'row';
+  ${media.lessThan("medium")`
+    /* screen width is less than 768px (medium) */
+    height: 20%;
+    display:flex;
+    `}
+  ${media.between("medium", "large")`
+    /* screen width is between 768px (medium) and 1170px (large) */
+    height: 40%;
+    display:flex;
+    /* width: 40%; */
+    `}
+    ${media.greaterThan("large")`
+  /* screen width is greater than 1170px (large) */
+    display: none;
+  `}
+ 
+`;
+const StyledMediaDescriptionBoxPhone = styled(Box)`
+${spacing}
+  ${palette}
+  ${typography}
+  /* flex-wrap: wrap; */
+  display:none;
+  /* display: flex; */
+  flex-direction: 'row';
+  ${media.lessThan("medium")`
+    /* screen width is less than 768px (medium) */
+    height: 20%;
+    display:flex;
+    `}
+  ${media.between("medium", "large")`
+    /* screen width is between 768px (medium) and 1170px (large) */
+    height: 40%;
+    display:flex;
+    /* width: 40%; */
+    `}
+    ${media.greaterThan("large")`
+  /* screen width is greater than 1170px (large) */
+    display: none;
+  `}
+ 
 `;
 
 const ContentWrapper = styled.div`
