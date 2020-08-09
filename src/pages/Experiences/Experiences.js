@@ -16,8 +16,8 @@ import NavigateBefore from "@material-ui/icons/NavigateBefore";
 import { StyledPara, StyledSpan } from "../../shared/StyledTypography";
 import { StyledIconButton, StyledGetAppIcon } from "../../shared/icons";
 import themes from "../../shared/theme";
-const Skills = forwardRef((props, ref) => {
-  const skillsList = [
+const Experiences = forwardRef((props, ref) => {
+  const experienceList = [
     {
       name: "Interkodex",
       description:
@@ -43,17 +43,18 @@ const Skills = forwardRef((props, ref) => {
   ];
 
   const handleOnArrowBack = () => {
-    if (selectedSkills > 0) setSelectedSkills(selectedSkills - 1);
-    if (selectedSkills - 1 === -1) setSelectedSkills(skillsList.length - 1);
+    if (selectedExpe > 0) setSelectedExperiences(selectedExpe - 1);
+    if (selectedExpe - 1 === -1)
+      setSelectedExperiences(experienceList.length - 1);
   };
   const handleOnArrowForward = () => {
-    if (selectedSkills < skillsList.length - 1)
-      setSelectedSkills(selectedSkills + 1);
-    else if (selectedSkills + 1 === skillsList.length) {
-      setSelectedSkills(0);
+    if (selectedExpe < experienceList.length - 1)
+      setSelectedExperiences(selectedExpe + 1);
+    else if (selectedExpe + 1 === experienceList.length) {
+      setSelectedExperiences(0);
     }
   };
-  const [selectedSkills, setSelectedSkills] = useState(0);
+  const [selectedExpe, setSelectedExperiences] = useState(0);
 
   const styles = (theme) => ({
     multilineColor: {
@@ -64,7 +65,7 @@ const Skills = forwardRef((props, ref) => {
     <Wrapper ref={ref} className={"SkillsRoot"}>
       <StyledBox pt={5} pl={"3vw"}>
         <StyledText color={"white"} fontSize={"4vw"} pt={"4vw"} pl={"2vw"}>
-          Skills {"&"} Experience
+          Experience
         </StyledText>
       </StyledBox>
       <ContentWrapper id={"cardContentWrapper"} pt={1}>
@@ -82,7 +83,7 @@ const Skills = forwardRef((props, ref) => {
           <StyledBox flexDirection={"column"} flex={4} color={"white"}>
             <StyledBox alignItems={"center"} flexWrap={"wrap"} mb={"2vw"}>
               <ImageWrapper
-                src={skillsList[selectedSkills].imgLogo}
+                src={experienceList[selectedExpe].imgLogo}
                 alt={"logo"}
                 // style={{ height: "100%", width: "100%" }}
               ></ImageWrapper>
@@ -92,12 +93,12 @@ const Skills = forwardRef((props, ref) => {
                 justifyItems={"center"}
               >
                 <StyledText
-                  color={skillsList[selectedSkills].nameColor}
+                  color={experienceList[selectedExpe].nameColor}
                   fontSize={"4vw"}
                   mt={1}
                   mb={1}
                 >
-                  {skillsList[selectedSkills].name}
+                  {experienceList[selectedExpe].name}
                 </StyledText>
                 <StyledSpan
                   fontSize={"1.5vw"}
@@ -106,7 +107,7 @@ const Skills = forwardRef((props, ref) => {
                   ml={1}
                   style={{ float: "left" }}
                 >
-                  {skillsList[selectedSkills].date}
+                  {experienceList[selectedExpe].date}
                 </StyledSpan>
               </StyledBox>
               <StyledBox alignItems={"center"}>
@@ -125,14 +126,14 @@ const Skills = forwardRef((props, ref) => {
             <StyledBox flex={1} color={"white"} pl={"auto"} mb={"5vw"}>
               <StyledTextFieldMediaPhone
                 type="input"
-                label="Description"
+                // label="Description"
                 variant="filled"
                 multiline
                 fullWidth
                 rows={10}
                 // InputProps={{ style: { fontSize: "2vw"} }}
                 disabled
-                value={skillsList[selectedSkills].description}
+                value={experienceList[selectedExpe].description}
               ></StyledTextFieldMediaPhone>
             </StyledBox>
             <StyledMediaBoxPhone
@@ -144,7 +145,7 @@ const Skills = forwardRef((props, ref) => {
                 color: "white",
               }}
             >
-              {skillsList[selectedSkills].techUsed.map((item, key) => (
+              {experienceList[selectedExpe].techUsed.map((item, key) => (
                 <StyledPara fontSize={"5vw"} key={key}>
                   {item}
                 </StyledPara>
@@ -160,7 +161,7 @@ const Skills = forwardRef((props, ref) => {
               color: "white",
             }}
           >
-            {skillsList[selectedSkills].techUsed.map((item, key) => (
+            {experienceList[selectedExpe].techUsed.map((item, key) => (
               <StyledPara fontSize={"2.5vw"} key={key}>
                 {item}
               </StyledPara>
@@ -343,4 +344,4 @@ const StyledArrowForward = styled(NavigateNext)`
   color:white;
 
 `;
-export default Skills;
+export default Experiences;

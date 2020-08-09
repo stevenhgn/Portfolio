@@ -2,18 +2,24 @@ import React, { forwardRef, useRef, useState } from "react";
 import styled from "styled-components";
 import { spacing, palette } from "@material-ui/system";
 import { Toolbar, Tooltip } from "@material-ui/core";
-import { StyledBox, LinkWrapper } from "../../shared/ContentWrapper";
+import {
+  StyledBox,
+  LinkWrapper,
+  LinkWrapperDesktop,
+  LinkWrapperPhone,
+} from "../../shared/ContentWrapper";
 import { BrowserRouter as Router } from "react-router-dom";
 import About from "../About/About";
-import Skills from "../Skills/Skills";
 import HomeScreen from "../HomeScreen/HomeScreen";
-import Interest from "../Interest/Interest";
 import {
   StyledIconButton,
   StyledArrowUp,
   StyledArrowDown,
 } from "../../shared/icons";
 import { StyledH1, StyledPara } from "../../shared/StyledTypography";
+import Projects from "../Projects/Projects";
+import media from "styled-media-query";
+import Experiences from "../Experiences/Experiences";
 
 const scrollToRef = (ref) => {
   ref.current.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -28,13 +34,13 @@ const scrollToRefOnWindowScroll = (ref) => {
 const Home = () => {
   const homeScreenRef = React.createRef();
   const aboutRef = React.createRef();
-  const skillsRef = React.createRef();
-  const interestRef = React.createRef();
+  const expRef = React.createRef();
+  const projectsRef = React.createRef();
   var start = 0;
   const [currPage, setCurrPage] = useState(0);
   const initalHeight = window.innerHeight;
   var windowInnerHeight = window.innerHeight;
-  const pageList = [homeScreenRef, aboutRef, skillsRef, interestRef];
+  const pageList = [homeScreenRef, aboutRef, expRef, projectsRef];
   window.onscroll = function () {
     myFunction();
   };
@@ -54,76 +60,6 @@ const Home = () => {
       navbar.classList.remove("sticky");
       arrowUp.classList.remove("sticky");
     }
-
-    // if (start === 1 && window.pageYOffset < windowInnerHeight - 500) {
-    //   start--;
-    //   if (start === 0 || start - 1 === 0) windowInnerHeight = initalHeight;
-    //   // if start is 0 then we reset windowinnerheight to be the initial
-    //   else windowInnerHeight = initalHeight * (start - 1);
-    //   console.log("START ", start);
-    //   console.log("windowInnerHeight is NOWWSS", windowInnerHeight);
-    //   setTimeout(() => {
-    //     scrollToRefOnWindowScroll(pageList[start]);
-    //   }, 500);
-    //   console.log("Less than HALF", start);
-    // } else if (
-    //   start > 0 &&
-    //   start < pageList.length - 1 &&
-    //   window.pageYOffset < windowInnerHeight / (start - 1) - 500
-    // ) {
-    //   // less than current window
-    //   start--;
-    //   if (start === 0 || start - 1 === 0) windowInnerHeight = initalHeight;
-    //   // if start is 0 then we reset windowinnerheight to be the initial
-    //   else windowInnerHeight = initalHeight * (start - 1);
-    //   console.log("START ", start);
-    //   console.log("windowInnerHeight is NOWWSS", windowInnerHeight);
-    //   setTimeout(() => {
-    //     scrollToRefOnWindowScroll(pageList[start]);
-    //   }, 500);
-    //   console.log("Less than HALF", start);
-    // } else if (
-    //   // case for when we are at the last page and are scrolling up
-    //   start > 0 &&
-    //   start === pageList.length - 1 &&
-    //   window.pageYOffset < windowInnerHeight - 500
-    // ) {
-    //   // less than current window
-    //   start--;
-    //   // if start is 0 then we reset windowinnerheight to be the initial
-    //   windowInnerHeight = initalHeight * (start + 1);
-    //   console.log("SCrolling up from last page START ", start);
-    //   console.log("windowInnerHeight is NOWWSS", windowInnerHeight);
-    //   setTimeout(() => {
-    //     scrollToRefOnWindowScroll(pageList[start]);
-    //   }, 500);
-    //   console.log("Less than HALF", start);
-    // } else {
-    //   // scrolling down
-    //   if (start === 0) {
-    //     console.log("start is 0");
-    //     // if we are at the top first page ref
-    //     if (window.pageYOffset > windowInnerHeight - 500) {
-    //       start += 1;
-    //       scrollToRefOnWindowScroll(pageList[start]);
-    //       windowInnerHeight = initalHeight * 2; // double the inner height
-    //       console.log("MORETHAN HALF", start);
-    //       console.log("windowInnerHeight is now", windowInnerHeight);
-    //     }
-    //   } else if (
-    //     window.pageYOffset > windowInnerHeight - 500 &&
-    //     start > 0 &&
-    //     start < pageList.length - 1
-    //   ) {
-    //     console.log("----- start is 1");
-    //     start += 1;
-
-    //     windowInnerHeight = initalHeight * start + 1;
-    //     scrollToRefOnWindowScroll(pageList[start]);
-    //     console.log("MORETHAN HALF", start);
-    //     console.log("windowInnerHeight is now", windowInnerHeight);
-    //   }
-    // }
   }
 
   const handleArrowDown = () => {
@@ -147,16 +83,24 @@ const Home = () => {
       <Router>
         <NavBarSticker id={"stickyNavbar"}>
           <StyledNavbar bgcolor={"black"}>
-            <LinkWrapper to={"/"}>
-              <StyledBox
-                color={"white"}
-                fontSize={"2vw"}
+            <LinkWrapperDesktop
+              to={"/"}
+              fontSize={"2vw"}
+              onClick={() => scrollToRef(homeScreenRef)}
+            >
+              <StyledBox color={"white"}>Steven Nguyen</StyledBox>
+            </LinkWrapperDesktop>
+            <HeaderWrapper pr={"2vw"}>
+              <LinkWrapperPhone
+                to={"/"}
+                pl={0}
+                ml={0}
+                // style={{ position: "fixed", left: 0 }}
+                pr={"4vw"}
                 onClick={() => scrollToRef(homeScreenRef)}
               >
-                Steven Nguyen
-              </StyledBox>
-            </LinkWrapper>
-            <HeaderWrapper pr={5}>
+                <StyledBox color={"white"}>Steven Nguyen</StyledBox>
+              </LinkWrapperPhone>
               <LinkWrapper
                 pl={"2vw"}
                 to={"/Aboutme"}
@@ -167,24 +111,23 @@ const Home = () => {
               </LinkWrapper>
               <LinkWrapper
                 pl={"2vw"}
-                to={"/Skill-Experience"}
+                to={"/Experience"}
                 // fontSize={"2vw"}
-                onClick={() => scrollToRef(skillsRef)}
+                onClick={() => scrollToRef(expRef)}
               >
-                <StyledBox color={"white"}>Skills {"&"} Experience</StyledBox>
+                <StyledBox color={"white"}>Experience</StyledBox>
               </LinkWrapper>
               <LinkWrapper
                 pl={"2vw"}
-                to={"/Skill-Experience"}
+                to={"/Projects"}
                 // fontSize={"2vw"}
-                onClick={() => scrollToRef(interestRef)}
+                onClick={() => scrollToRef(projectsRef)}
               >
-                <StyledBox color={"white"}>Interest</StyledBox>
+                <StyledBox color={"white"}>Projects</StyledBox>
               </LinkWrapper>
               <LinkWrapper
                 pl={"2vw"}
                 to={"/Contact"}
-                // fontSize={"2vw"}
                 // onClick={() => scrollToRef()}
               >
                 <StyledBox color={"white"}>Contact</StyledBox>
@@ -231,8 +174,8 @@ const Home = () => {
 
           <HomeScreen ref={homeScreenRef} />
           <About ref={aboutRef} />
-          <Skills ref={skillsRef} />
-          <Interest ref={interestRef} />
+          <Experiences ref={expRef} />
+          <Projects ref={projectsRef} />
         </ContentWrapper>
       </Router>
     </HomeWrapper>
@@ -263,10 +206,13 @@ const HeaderWrapper = styled.div`
   position: absolute;
   right: 0;
   flex-wrap: wrap;
+  /* flex-grow: grow; */
 `;
 const StyledNavbar = styled(Toolbar)`
   ${spacing}
   ${palette}
+  display: flex;
+  flex-direction: row;
 `;
 const NavBarSticker = styled.div`
   ${spacing}
@@ -274,6 +220,10 @@ const NavBarSticker = styled.div`
   position:fixed;
   top: 0;
   width: 100vw;
+  ${media.lessThan("medium")`
+    /* screen width is less than 768px (medium) */
+    font-size:12px;
+    `}
 `;
 
 export default Home;

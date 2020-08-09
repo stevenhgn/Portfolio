@@ -89,7 +89,44 @@ const LinkWrapper = styled(Link)`
   ${spacing}
   ${palette}
   ${typography}
-
+  text-decoration: none;
+`;
+const LinkWrapperPhone = styled(Link)`
+  ${spacing}
+  ${palette}
+  ${typography}
+  text-decoration: none;
+  
+  ${media.lessThan("medium")`
+    /* screen width is less than 768px (medium) */
+    font-size:13px;
+    `}
+  ${media.between("medium", "large")`
+    /* screen width is between 768px (medium) and 1170px (large) */
+    display:none;
+    /* width: 40%; */
+    `}
+  ${media.greaterThan("large")`
+    /* screen width is greater than 1170px (large) */
+    display:none;
+    /* background: red; */
+  `}
+`;
+const LinkWrapperDesktop = styled(Link)`
+  ${spacing}
+  ${palette}
+  ${typography}
+  text-decoration: none;
+  ${media.lessThan("medium")`
+    /* screen width is less than 768px (medium) */
+    display:none;
+    `}
+  ${media.between("medium", "large")`
+    /* screen width is between 768px (medium) and 1170px (large) */
+    `}
+  ${media.greaterThan("large")`
+    /* screen width is greater than 1170px (large) */
+  `}
 `;
 export {
   StyledBox,
@@ -98,4 +135,6 @@ export {
   StyledTextField,
   StyledFragment,
   StyledTextFieldMediaPhone,
+  LinkWrapperPhone,
+  LinkWrapperDesktop,
 };

@@ -94,7 +94,7 @@ const About = forwardRef((props, ref) => {
           </StyledSpan>
           <ImageWrapper
             src={"images/Aboutme_activities.png"}
-            style={{ width: "100%", height: "100%" }}
+            // style={{ width: "60%" }}
           ></ImageWrapper>
         </StyledBox>
       </StyledBox>
