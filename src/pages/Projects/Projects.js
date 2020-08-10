@@ -5,10 +5,8 @@ import { ImageWrapper, StyledBox } from "../../shared/ContentWrapper";
 const Projects = forwardRef((props, ref) => {
   return (
     <Wrapper ref={ref} className={"ProjectsRoot"}>
-      <StyledBox p={10}>
-        <StyledText color={"white"} pt={10}>
-          Projects
-        </StyledText>
+      <StyledBox pl={"3vw"} pt={"10vw"}>
+        <StyledText color={"white"}>Projects</StyledText>
       </StyledBox>
       {/* <ImageWrapper src={"/images/Aboutme.png"} alt="About me"></ImageWrapper> */}
     </Wrapper>
