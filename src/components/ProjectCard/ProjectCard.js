@@ -84,9 +84,9 @@ const CardWrapper = styled.div`
     ${media.between("medium", "large")`
         /* screen width is between 768px (medium) and 1170px (large) */
         min-width:250px;
-        max-width:300px;
+        max-width:350px;
         min-height:125px;
-        max-height:125px;
+        max-height:225px;
         /* width: 40%; */
     `};
 `;

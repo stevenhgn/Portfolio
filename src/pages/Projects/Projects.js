@@ -139,7 +139,7 @@ const Projects = forwardRef((props, ref) => {
 const Wrapper = styled.div`
   ${spacing}
   ${palette}
-  background: url("/images/Aboutme.png") no-repeat;
+  background: url("/images/Projects.png") no-repeat;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
