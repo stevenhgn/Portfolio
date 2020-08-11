@@ -3,6 +3,7 @@ const themes = {
     spacing: 4,
     palette: {
       primary: "#007ACA",
+      fontblue: "#3EA2FF",
       primaryGreen: "#4D8400",
       // Neutrals
       greyBlueTint: "#F0F2F5",

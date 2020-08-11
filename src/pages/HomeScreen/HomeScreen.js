@@ -39,7 +39,7 @@ const MainPageText = styled.h1`
   ${typography}
   font-weight:100;
   margin: 0 auto;
-  /* margin-left:25%; */
+  margin-left:10%;
   /* padding:20%; */
   /* position: absolute;
   top: 50%;

@@ -70,15 +70,24 @@ const Projects = forwardRef((props, ref) => {
       title: "Visma synth",
       description: "Prosjektet for Interkodex Consulting AS gikk ut på........",
       titleColor: "contentRed",
-      techUsed: ["#react", "#.net", "#azure-devops", "#scrum"],
+      techUsed: [
+        "#react",
+        "#.net",
+        "#azure-devops",
+        "#scrum",
+        "#.net",
+        "#azure-devops",
+        "#scrum",
+      ],
       imgLogo: "/logo/Visma-logo.png",
       date: "Summer 2020",
       downloadAttest: "",
       index: 4,
     },
   ];
+  const isNotDesktop = window.innerHeight < 1080;
   const [page, setPage] = useState(0);
-  const cardPerPage = 4;
+  const cardPerPage = isNotDesktop ? 4 : 4;
   const sum_page = Math.ceil(projectList.length / cardPerPage);
   const handleOnArrowBack = () => {
     if (page > 0) setPage(page - 1);
@@ -91,8 +100,8 @@ const Projects = forwardRef((props, ref) => {
 
   return (
     <Wrapper ref={ref} className={"ProjectsRoot"}>
-      <StyledBox pl={"3vw"} pt={"10vw"} justifyContent={"center"}>
-        <StyledText color={"white"}>PROJECTS</StyledText>
+      <StyledBox pt={isNotDesktop ? 8 : 15} justifyContent={"center"}>
+        <StyledText color={"greyBlueTint"}>PROJECTS</StyledText>
       </StyledBox>
       <ContentWrapper id={"cardContentWrapper"} pt={1}>
         <StyledIconButtonBack onClick={handleOnArrowBack}>
@@ -101,7 +110,11 @@ const Projects = forwardRef((props, ref) => {
           </Tooltip>
         </StyledIconButtonBack>
         <StyledBox
-          style={{ width: "100vw", flexWrap: "wrap", justifyContent: "center" }}
+          style={{
+            width: "100vw",
+            flexWrap: "wrap",
+            justifyContent: "center",
+          }}
         >
           {projectList
             .slice(page * cardPerPage, page * cardPerPage + cardPerPage)

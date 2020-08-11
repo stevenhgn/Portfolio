@@ -1,7 +1,7 @@
-import React from "react";
+import React, { Fragment } from "react";
 import styled from "styled-components";
 import { spacing, palette, typography } from "@material-ui/system";
-import { Icon, SvgIcon } from "@material-ui/core";
+import { Icon, SvgIcon, TextField } from "@material-ui/core";
 import { StyledSpan, StyledH1 } from "../../shared/StyledTypography";
 import {
   StyledBox,
@@ -11,12 +11,13 @@ import {
 import media from "styled-media-query";
 
 const ProjectCard = (props) => {
+  const isNotDesktop = window.innerHeight < 1080;
+  const cardwrapper = document.getElementById("CardWrapper");
   return (
-    <CardWrapper m={"2vw"}>
+    <CardWrapper id="CardWrapper" m={"2vw"}>
       <StyledBox
         id="TitleComponent"
         flexDirection={"column"}
-        flex={4}
         pl={"1vw"}
         pt={"1vw"}
       >
@@ -26,19 +27,23 @@ const ProjectCard = (props) => {
         <StyledSpan style={{ fontSize: "2.5vw" }}>
           {props.item.title}
         </StyledSpan>
-        <StyledBox
-          id={"Body content"}
-          style={{ minWidth: "100px", maxWidth: "200px" }}
-        >
-          <StyledText
-            variant="filled"
+        <StyledBox id={"Body content"}>
+          <StyledTextFieldMedia
+            variant="standard"
+            disabled
             multiline
             fullWidth
-            rows={10}
-            fontSize={"1vw"}
-          >
-            {props.item.description}
-          </StyledText>
+            InputProps={{ style: { fontSize: "1vw" } }}
+            rows={5}
+            value={props.item.description}
+          ></StyledTextFieldMedia>
+        </StyledBox>
+        <StyledBox id={"footer-content"} color={"fontblue"} fontSize={"1vw"}>
+          {props.item.techUsed.map((tech, key) => (
+            <StyledSpan key={key} pl={2}>
+              {tech}
+            </StyledSpan>
+          ))}
         </StyledBox>
       </StyledBox>
       <StyledBox>
@@ -54,7 +59,9 @@ const CardWrapper = styled.div`
     ${typography}
     display:flex; 
     flex-direction: row;
+    justify-content:space-evenly;
     border: 2px solid black;
+    border-radius: 5px;
     
     /* align-items:center; */
     /* margin-left:auto; */
@@ -70,35 +77,37 @@ const CardWrapper = styled.div`
     /* screen width is less than 768px (medium) */
         min-width:200px;
         max-width:250px;
-        min-height:125px;
-        max-height:125px;
+        min-height:115px;
+        max-height:115px;
+        border-radius: 3px;
     `};
     ${media.between("medium", "large")`
         /* screen width is between 768px (medium) and 1170px (large) */
-        min-width:200px;
-        max-width:250px;
+        min-width:250px;
+        max-width:300px;
         min-height:125px;
         max-height:125px;
         /* width: 40%; */
     `};
 `;
 const StyledImage = styled.img`
-  ${palette}
-  ${spacing}
-  ${typography}
-  ${media.greaterThan("large")`
+    object-fit:cover;
+    ${palette}
+    ${spacing}
+    ${typography}
+    ${media.greaterThan("large")`
         /* screen width is greater than 1170px (large) */
         min-width:150px;
         min-height:150px;
         max-height:150px;
         
-  `};
+    `};
     ${media.lessThan("medium")`
     /* screen width is less than 768px (medium) */
         min-width:50px;
-        max-width:100px;
+        max-width:50px;
         min-height:50px;
-        max-height:100px;
+        max-height:50px;
     `};
     ${media.between("medium", "large")`
         /* screen width is between 768px (medium) and 1170px (large) */
@@ -108,10 +117,22 @@ const StyledImage = styled.img`
         max-height:100px;
     `};
 `;
-const StyledText = styled.p`
+const StyledTextFieldMedia = styled(TextField)`
   ${palette}
   ${spacing}
   ${typography}
+    
+  .MuiInputBase-input{
+    font-size:"1vw";
+    color: black;
+  }
+  .MuiFormLabel-root.Mui-disabled{
+    color: black;
+  }
+  .MuiFilledInput-underline:after {
+    border-color: white;
+  }
+
   ${media.greaterThan("large")`
         /* screen width is greater than 1170px (large) */
         min-width:150px;
@@ -121,16 +142,16 @@ const StyledText = styled.p`
   `};
     ${media.lessThan("medium")`
     /* screen width is less than 768px (medium) */
-        min-width:50px;
-        max-width:100px;
+        min-width:100px;
         min-height:50px;
-        max-height:100px;
+        
+        
     `};
     ${media.between("medium", "large")`
         /* screen width is between 768px (medium) and 1170px (large) */
         min-width:50px;
         max-width:100px;
-        min-height:50px;
+        min-height:10px;
         max-height:100px;
         /* width: 40%; */
     `};
