@@ -102,7 +102,7 @@ const Projects = forwardRef((props, ref) => {
       index: 6,
     },
   ];
-  const isNotDesktop = window.innerHeight < 900;
+  const isNotDesktop = window.innerWidth < 768;
   const [page, setPage] = useState(1);
   const cardPerPage = isNotDesktop ? 3 : 4;
   const sum_page = Math.ceil(projectList.length / cardPerPage);
