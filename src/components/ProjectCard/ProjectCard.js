@@ -36,7 +36,6 @@ const ProjectCard = (props) => {
               pl={"0.5vw"}
               style={{
                 fontSize: isNotDesktop ? "1.5vw" : "1vw",
-                alignSelf: "center",
               }}
             >
               - {props.item.underTitle}
@@ -58,7 +57,7 @@ const ProjectCard = (props) => {
             multiline
             fullWidth
             InputProps={{ style: { fontSize: isNotDesktop ? "2vw" : "0.8vw" } }}
-            rows={5}
+            rows={isNotDesktop ? 10 : 5}
             value={props.item.description}
           ></StyledTextFieldMedia>
         </StyledBox>
@@ -77,7 +76,7 @@ const ProjectCard = (props) => {
         </StyledBox>
       </StyledBox>
       <StyledBox>
-        <StyledImage flex={2} src={props.item.imgLogo}></StyledImage>
+        <StyledImage src={props.item.imgLogo}></StyledImage>
       </StyledBox>
     </CardWrapper>
   );
@@ -90,7 +89,7 @@ const CardWrapper = styled.div`
     display:flex; 
     align-self: flex-start;
     flex-direction: row;
-    justify-content:space-evenly;
+    justify-content:space-between;
     border: 2px solid black;
     border-radius: 5px;
     
@@ -107,11 +106,13 @@ const CardWrapper = styled.div`
   `};
     ${media.lessThan("medium")`
     /* screen width is less than 768px (medium) */
-        min-width:200px;
-        max-width:250px;
+        min-width:225px;
+        max-width:300px;
         min-height:115px;
-        max-height:115px;
+        max-height:200px;
         border-radius: 3px;
+        justify-content:space-evenly;
+
     `};
     ${media.between("medium", "large")`
         /* screen width is between 768px (medium) and 1170px (large) */
@@ -169,6 +170,7 @@ const StyledTextFieldMedia = styled(TextField)`
   ${media.greaterThan("large")`
         /* screen width is greater than 1170px (large) */
         min-width:150px;
+        max-width:300px;
         /* min-height:150px; */
         max-height:150px;
         
@@ -176,9 +178,9 @@ const StyledTextFieldMedia = styled(TextField)`
     ${media.lessThan("medium")`
     /* screen width is less than 768px (medium) */
         min-width:100px;
-        max-width:100px;
-        min-height:50px;
-        max-height:50px;
+        max-width:180px;
+        min-height:100px;
+        max-height:150px;
         
         
     `};

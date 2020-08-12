@@ -23,7 +23,7 @@ const Projects = forwardRef((props, ref) => {
       label: "INTERKODEX",
       title: "NRF",
       description:
-        "Hos Interkodex har jeg jobbet med flere prosjekter (RENAS, EFO, NRF) hvor jeg har utviklet og forvaltet web løsninger hvor med fokus på .Net, C#, HTML, Angular, JQuery, Typescript, Javascript, Microsoft SQL Server, Microsoft Team Foundation Server og Azure Dev Ops Server.",
+        "Hos Interkodex har jeg jobbet med flere prosjekter (RENAS, EFO, NRF) hvor jeg har utviklet og forvaltet web løsninger med fokus på .Net, C#, HTML, Angular, JQuery, Typescript, Javascript, Microsoft SQL Server, Microsoft Team Foundation Server og Azure Dev Ops Server.",
       titleColor: "#4D96C5",
       techUsed: ["#angular", "#.net", "#azure-devops", "#kanban"],
       imgLogo: "/logo/NRF-small-logo.png",
@@ -91,7 +91,7 @@ const Projects = forwardRef((props, ref) => {
     },
     {
       label: "PERSONAL PROJECT",
-      title: "Portfolio",
+      title: "PORTFOLIO",
       description:
         "Personal project to create a interactive and creative portfolio....",
       titleColor: "contentRed",
@@ -103,7 +103,7 @@ const Projects = forwardRef((props, ref) => {
     },
   ];
   const isNotDesktop = window.innerHeight < 900;
-  const [page, setPage] = useState(0);
+  const [page, setPage] = useState(1);
   const cardPerPage = isNotDesktop ? 3 : 4;
   const sum_page = Math.ceil(projectList.length / cardPerPage);
   const handleOnArrowBack = () => {
