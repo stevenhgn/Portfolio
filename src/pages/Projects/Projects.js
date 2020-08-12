@@ -130,9 +130,9 @@ const Projects = forwardRef((props, ref) => {
           style={{
             width: "100vw",
             flexWrap: "wrap",
-            flexDirection: isNotDesktop ? "column" : "row",
-            justifyContent: isNotDesktop ? null : "center",
-            alignContent: isNotDesktop ? "center" : null,
+            // flexDirection: isNotDesktop ? "row" : "column",
+            justifyContent: "center",
+            alignContent: "center",
           }}
         >
           {projectList
