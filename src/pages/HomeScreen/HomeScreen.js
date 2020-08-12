@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { spacing, palette, typography } from "@material-ui/system";
 import { StyledH1 } from "../../shared/StyledTypography";
 import { ImageWrapper } from "../../shared/ContentWrapper";
+import media from "styled-media-query";
 
 const HomeScreen = forwardRef((props, ref) => {
   return (
@@ -40,6 +41,11 @@ const MainPageText = styled.h1`
   font-weight:100;
   margin: 0 auto;
   margin-left:10%;
+  ${media.greaterThan("large")`
+      /* screen width is greater than 1170px (large) */
+      margin-left:25%;
+  `};
+
   /* padding:20%; */
   /* position: absolute;
   top: 50%;

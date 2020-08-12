@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg width="80.989mm" height="29.997mm" version="1.1" viewBox="0 0 80.989 29.997" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+ <defs>
+  <clipPath id="clipPath3729">
+   <path d="M 0,299.529 H 595.28 V 0 H 0 Z"/>
+  </clipPath>
+ </defs>
+ <metadata>
+  <rdf:RDF>
+   <cc:Work rdf:about="">
+    <dc:format>image/svg+xml</dc:format>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:title/>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <g transform="translate(253.52 -124.45)">
+  <g transform="matrix(.35278 0 0 -.35278 -395.1 155.89)">
+   <g transform="translate(206.83 -141.67)" clip-path="url(#clipPath3729)">
+    <g transform="translate(196.53 148.18)">
+     <path d="m0 0h47.613c1.112 0 2.023 0.91 2.023 2.023v9.145c0 1.113-0.911 2.023-2.023 2.023h-47.613c-1.113 0-2.023-0.91-2.023-2.023v-9.145c0-1.113 0.91-2.023 2.023-2.023" fill="#002337"/>
+    </g>
+    <g transform="translate(196.53 215.19)">
+     <path d="m0 0h47.613c1.112 0 2.023 0.91 2.023 2.023v9.145c0 1.113-0.911 2.023-2.023 2.023h-47.613c-1.113 0-2.023-0.91-2.023-2.023v-9.145c0-1.113 0.91-2.023 2.023-2.023" fill="#002337"/>
+    </g>
+    <g transform="translate(196.53 181.68)">
+     <path d="m0 0h47.613c1.112 0 2.023 0.91 2.023 2.023v9.145c0 1.113-0.911 2.023-2.023 2.023h-47.613c-1.113 0-2.023-0.91-2.023-2.023v-9.145c0-1.113 0.91-2.023 2.023-2.023" fill="#002337"/>
+    </g>
+    <g transform="translate(271.4 215.19)">
+     <path d="m0 0h47.613c1.112 0 2.023 0.91 2.023 2.023v9.145c0 1.113-0.911 2.023-2.023 2.023h-47.613c-1.113 0-2.023-0.91-2.023-2.023v-9.145c0-1.113 0.91-2.023 2.023-2.023" fill="#002337"/>
+    </g>
+    <g transform="translate(271.4 181.68)">
+     <path d="m0 0h47.613c1.112 0 2.023 0.91 2.023 2.023v9.145c0 1.113-0.911 2.023-2.023 2.023h-47.613c-1.113 0-2.023-0.91-2.023-2.023v-9.145c0-1.113 0.91-2.023 2.023-2.023" fill="#002337"/>
+    </g>
+    <g transform="translate(381.56 158.51)">
+     <path d="m0 0c16.305 0 29.76 13.325 29.76 29.631 0 16.305-13.455 29.895-29.76 29.895s-29.631-13.59-29.631-29.895c0-16.306 13.326-29.631 29.631-29.631m6e-3 72.278c23.622 0 42.518-19.013 42.518-42.636 0-23.616-18.896-42.394-42.518-42.394-23.623 0-42.395 18.778-42.395 42.394 0 23.623 18.772 42.636 42.395 42.636" fill="#002337"/>
+    </g>
+   </g>
+  </g>
+ </g>
+</svg>

@@ -91,13 +91,14 @@ const CardWrapper = styled.div`
     `};
 `;
 const StyledImage = styled.img`
-    object-fit:cover;
+    /* object-fit:; */
     ${palette}
     ${spacing}
     ${typography}
     ${media.greaterThan("large")`
         /* screen width is greater than 1170px (large) */
         min-width:150px;
+        max-width:150px;
         min-height:150px;
         max-height:150px;
         
