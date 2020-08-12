@@ -11,7 +11,7 @@ import {
 import media from "styled-media-query";
 
 const ProjectCard = (props) => {
-  const isNotDesktop = window.innerHeight < 1080;
+  const isNotDesktop = window.innerHeight < 900;
   const cardwrapper = document.getElementById("CardWrapper");
   return (
     <CardWrapper id="CardWrapper" m={"2vw"}>
@@ -21,11 +21,35 @@ const ProjectCard = (props) => {
         pl={"1vw"}
         pt={"1vw"}
       >
-        <StyledSpan style={{ fontSize: "1vw", fontWeight: "200" }}>
+        <StyledSpan
+          style={{
+            fontSize: isNotDesktop ? "1.5vw" : "1vw",
+            fontWeight: "200",
+          }}
+        >
           {props.item.label}
         </StyledSpan>
-        <StyledSpan style={{ fontSize: "2.5vw" }}>
+        <StyledSpan style={{ fontSize: isNotDesktop ? "5vw" : "2.5vw" }}>
           {props.item.title}
+          {props.item.underTitle ? (
+            <StyledSpan
+              pl={"0.5vw"}
+              style={{
+                fontSize: isNotDesktop ? "1.5vw" : "1vw",
+                alignSelf: "center",
+              }}
+            >
+              - {props.item.underTitle}
+            </StyledSpan>
+          ) : null}
+        </StyledSpan>
+        <StyledSpan
+          color={"purple"}
+          style={{
+            fontSize: isNotDesktop ? "1vw" : "0.8vw",
+          }}
+        >
+          {props.item.date}
         </StyledSpan>
         <StyledBox id={"Body content"}>
           <StyledTextFieldMedia
@@ -41,9 +65,9 @@ const ProjectCard = (props) => {
         <StyledBox
           id={"footer-content"}
           color={"fontblue"}
-          fontSize={"1vw"}
+          fontSize={isNotDesktop ? "1.5vw" : "1vw"}
           marginTop={"auto"}
-          mb={"2vw"}
+          mb={"1.5vw"}
         >
           {props.item.techUsed.map((tech, key) => (
             <StyledSpan key={key} pr={2}>
@@ -64,6 +88,7 @@ const CardWrapper = styled.div`
     ${spacing}
     ${typography}
     display:flex; 
+    align-self: flex-start;
     flex-direction: row;
     justify-content:space-evenly;
     border: 2px solid black;
@@ -106,7 +131,7 @@ const StyledImage = styled.img`
         /* screen width is greater than 1170px (large) */
         min-width:150px;
         max-width:150px;
-        min-height:150px;
+        min-height:100px;
         max-height:150px;
         
     `};
@@ -144,7 +169,7 @@ const StyledTextFieldMedia = styled(TextField)`
   ${media.greaterThan("large")`
         /* screen width is greater than 1170px (large) */
         min-width:150px;
-        min-height:150px;
+        /* min-height:150px; */
         max-height:150px;
         
   `};
