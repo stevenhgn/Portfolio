@@ -38,7 +38,7 @@ const Projects = forwardRef((props, ref) => {
         "Prosjektet for Visma Consulting AS gikk ut på å lage et system for syntetisering av testdata.Målet var å lage en løsning som tillater brukere å enkelt generere testdata som ikke gjør noen kompromisser på personvern og gjør at man får testet løsninger uten å måtte forholde seg til data som inneholder personsensitiv informasjon.Løsningen består av tre deler, en generator for identiteter, en backend for en generisk håndtering av generering av data, og en frontend - applikasjon lar brukere se og opprette personer for bruk i testmiljøer.",
       titleColor: "contentRed",
       techUsed: ["#react", "#.net", "#azure-devops", "#scrum"],
-      imgLogo: "/logo/efo.svg",
+      imgLogo: "/logo/EFO-small-logo.png",
       date: "Summer 2020",
       downloadAttest: "",
       index: 1,
@@ -87,7 +87,7 @@ const Projects = forwardRef((props, ref) => {
   ];
   const isNotDesktop = window.innerHeight < 1080;
   const [page, setPage] = useState(0);
-  const cardPerPage = isNotDesktop ? 4 : 4;
+  const cardPerPage = isNotDesktop ? 3 : 4;
   const sum_page = Math.ceil(projectList.length / cardPerPage);
   const handleOnArrowBack = () => {
     if (page > 0) setPage(page - 1);

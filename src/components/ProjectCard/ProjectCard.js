@@ -33,14 +33,20 @@ const ProjectCard = (props) => {
             disabled
             multiline
             fullWidth
-            InputProps={{ style: { fontSize: "1vw" } }}
+            InputProps={{ style: { fontSize: isNotDesktop ? "2vw" : "0.8vw" } }}
             rows={5}
             value={props.item.description}
           ></StyledTextFieldMedia>
         </StyledBox>
-        <StyledBox id={"footer-content"} color={"fontblue"} fontSize={"1vw"}>
+        <StyledBox
+          id={"footer-content"}
+          color={"fontblue"}
+          fontSize={"1vw"}
+          marginTop={"auto"}
+          mb={"2vw"}
+        >
           {props.item.techUsed.map((tech, key) => (
-            <StyledSpan key={key} pl={2}>
+            <StyledSpan key={key} pr={2}>
               {tech}
             </StyledSpan>
           ))}
@@ -69,6 +75,7 @@ const CardWrapper = styled.div`
     ${media.greaterThan("large")`
         /* screen width is greater than 1170px (large) */
         min-width:500px;
+        /* max-width:500px; */
         min-height:300px;
         max-height:300px;
         
@@ -144,7 +151,9 @@ const StyledTextFieldMedia = styled(TextField)`
     ${media.lessThan("medium")`
     /* screen width is less than 768px (medium) */
         min-width:100px;
+        max-width:100px;
         min-height:50px;
+        max-height:50px;
         
         
     `};
