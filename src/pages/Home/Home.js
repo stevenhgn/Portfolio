@@ -64,7 +64,6 @@ const Home = () => {
 
   const handleArrowDown = () => {
     const currPageIndex = Math.round(window.pageYOffset / window.innerHeight);
-    console.log("Curr ", currPage, "Currindex: ", currPageIndex);
     if (currPageIndex < pageList.length - 1) {
       scrollToRef(pageList[currPageIndex + 1]);
       setCurrPage(currPageIndex + 1);
@@ -72,7 +71,6 @@ const Home = () => {
   };
   const handleArrowUp = () => {
     const currPageIndex = Math.round(window.pageYOffset / window.innerHeight);
-    console.log(currPageIndex);
     if (currPageIndex > 0) {
       scrollToRef(pageList[currPageIndex - 1]);
       setCurrPage(currPageIndex - 1);
@@ -95,7 +93,7 @@ const Home = () => {
                 to={"/"}
                 pl={0}
                 ml={0}
-                // style={{ position: "fixed", left: 0 }}
+                style={{ position: "fixed", left: 10 }}
                 pr={"4vw"}
                 onClick={() => scrollToRef(homeScreenRef)}
               >

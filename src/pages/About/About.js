@@ -16,6 +16,7 @@ import School from "@material-ui/icons/School";
 import BusinessCenter from "@material-ui/icons/BusinessCenter";
 import FitnessCenter from "@material-ui/icons/FitnessCenter";
 import Flight from "@material-ui/icons/Flight";
+import media from "styled-media-query";
 const About = forwardRef((props, ref) => {
   const aboutCard = [
     <ContentWrapper flex={1} key={0}>
@@ -52,11 +53,7 @@ const About = forwardRef((props, ref) => {
         pl={"5vw"}
       >
         <StyledBox flexWrap={"wrap"}>
-          <ImageWrapper
-            src={"logo/profile-logo.png"}
-            alt={"logo"}
-            style={{ height: "100%", width: "100%" }}
-          ></ImageWrapper>
+          <StyledImage src={"logo/profile-logo.png"} alt={"logo"}></StyledImage>
         </StyledBox>
         <StyledBox
           className={"AboutTitle"}
@@ -92,10 +89,10 @@ const About = forwardRef((props, ref) => {
           <StyledSpan color={"lightpurple"} fontSize={"3vw"} mb={"1vw"}>
             Free time activities
           </StyledSpan>
-          <ImageWrapper
+          <StyledImage
             src={"images/Aboutme_activities.png"}
             // style={{ width: "60%" }}
-          ></ImageWrapper>
+          ></StyledImage>
         </StyledBox>
       </StyledBox>
     </Wrapper>
@@ -140,5 +137,34 @@ const StyledText = styled.h1`
   ${palette}
   ${typography}
   font-weight: 400;
+`;
+
+const StyledImage = styled.img`
+    /* object-fit:; */
+    ${palette}
+    ${spacing}
+    ${typography}
+    ${media.greaterThan("large")`
+      /* screen width is greater than 1170px (large) */
+      min-width:150px;
+      max-width:500px;
+      min-height:100px;
+      max-height:500px;
+        
+    `};
+    ${media.lessThan("medium")`
+    /* screen width is less than 768px (medium) */
+      min-width:100px;
+      max-width:150px;
+      min-height:100px;
+      max-height:150px;
+    `};
+    ${media.between("medium", "large")`
+      /* screen width is between 768px (medium) and 1170px (large) */
+      min-width:100px;
+      max-width:200px;
+      min-height:100px;
+      max-height:200px;
+    `};
 `;
 export default About;
