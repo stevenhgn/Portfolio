@@ -104,23 +104,24 @@ const CardWrapper = styled.div`
         max-height:300px;
         
   `};
+    ${media.between("medium", "large")`
+        /* screen width is between 768px (medium) and 1170px (large) */
+        min-width:500px;
+        /* max-width:500px; */
+        min-height:215px;
+        max-height:300px;
+        /* width: 40%; */
+    `};
     ${media.lessThan("medium")`
     /* screen width is less than 768px (medium) */
         min-width:225px;
         max-width:300px;
-        min-height:115px;
+        min-height:50px;
         max-height:200px;
         border-radius: 3px;
         justify-content:space-evenly;
+        margin-bottom:10vw;
 
-    `};
-    ${media.between("medium", "large")`
-        /* screen width is between 768px (medium) and 1170px (large) */
-        min-width:250px;
-        max-width:350px;
-        min-height:125px;
-        max-height:225px;
-        /* width: 40%; */
     `};
 `;
 const StyledImage = styled.img`
