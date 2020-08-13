@@ -92,6 +92,7 @@ const CardWrapper = styled.div`
     justify-content:space-between;
     border: 2px solid black;
     border-radius: 5px;
+    background-color:#977979;
     
     /* align-items:center; */
     /* margin-left:auto; */

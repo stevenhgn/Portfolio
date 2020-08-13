@@ -8,6 +8,7 @@ const themes = {
       // Neutrals
       greyBlueTint: "#F0F2F5",
       darkGrey: "#646464",
+      patternColor: "#977979",
 
       black: "#282828",
 

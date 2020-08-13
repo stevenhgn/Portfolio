@@ -183,7 +183,7 @@ const Experiences = forwardRef((props, ref) => {
 const Wrapper = styled.div`
   ${spacing}
   ${palette}
-  background: url("/images/Skills_expe.png") no-repeat;
+  background: url("/images/Skills_expe_lightCoral.png") no-repeat;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
