@@ -61,10 +61,20 @@ const Experiences = forwardRef((props, ref) => {
       color: "white",
     },
   });
+  const isNotDesktop = window.innerWidth < 768;
   return (
     <Wrapper ref={ref} className={"SkillsRoot"}>
-      <StyledBox pt={5} pl={"3vw"}>
-        <StyledText color={"white"} fontSize={"4vw"} pt={"4vw"} pl={"2vw"}>
+      <StyledBox
+        pt={5}
+        pl={"3vw"}
+        justifyContent={isNotDesktop ? "center" : null}
+      >
+        <StyledText
+          color={"white"}
+          fontSize={isNotDesktop ? "6vw" : "4vw"}
+          pt={"4vw"}
+          pl={"2vw"}
+        >
           Experience
         </StyledText>
       </StyledBox>
@@ -146,7 +156,7 @@ const Experiences = forwardRef((props, ref) => {
               }}
             >
               {experienceList[selectedExpe].techUsed.map((item, key) => (
-                <StyledPara fontSize={"5vw"} key={key}>
+                <StyledPara fontSize={"4vw"} key={key}>
                   {item}
                 </StyledPara>
               ))}

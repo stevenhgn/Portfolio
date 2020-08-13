@@ -9,6 +9,7 @@ import {
   StyledTextField,
 } from "../../shared/ContentWrapper";
 import media from "styled-media-query";
+import themes from "../../shared/theme";
 
 const ProjectCard = (props) => {
   const isNotDesktop = window.innerHeight < 900;
@@ -90,7 +91,7 @@ const CardWrapper = styled.div`
     align-self: flex-start;
     flex-direction: row;
     justify-content:space-between;
-    border: 2px solid black;
+    border: 2px solid  black;
     border-radius: 5px;
     background-color:#977979;
     

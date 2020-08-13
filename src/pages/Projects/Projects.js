@@ -8,7 +8,7 @@ import {
   StyledTextField,
   StyledTextFieldMediaPhone,
 } from "../../shared/ContentWrapper";
-import { IconButton, Tooltip, Box } from "@material-ui/core";
+import { IconButton, Tooltip, Box, Button } from "@material-ui/core";
 import ArrowBackIos from "@material-ui/icons/ArrowBackIos";
 import ArrowForwardIos from "@material-ui/icons/ArrowForwardIos";
 import NavigateNext from "@material-ui/icons/NavigateNext";
@@ -17,6 +17,7 @@ import { StyledPara, StyledSpan } from "../../shared/StyledTypography";
 import { StyledIconButton, StyledGetAppIcon } from "../../shared/icons";
 import themes from "../../shared/theme";
 import ProjectCard from "../../components/ProjectCard/ProjectCard";
+import ProjectCardV2 from "../../components/ProjectCardV2/ProjectCardV2";
 const Projects = forwardRef((props, ref) => {
   const projectList = [
     {
@@ -74,6 +75,7 @@ const Projects = forwardRef((props, ref) => {
       titleColor: "contentRed",
       techUsed: ["#react", "#.net", "#azure-devops", "#scrum"],
       imgLogo: "/logo/Visma-logo.png",
+      expandLogo: "/logo/Visma-logo.png",
       date: "Summer 2020",
       downloadAttest: "",
       index: 4,
@@ -102,6 +104,10 @@ const Projects = forwardRef((props, ref) => {
       index: 6,
     },
   ];
+  const [nextLevelMode, setNextLevelMode] = useState(true);
+  const handleOnChangeCard = () => {
+    setNextLevelMode(!nextLevelMode);
+  };
   const isNotDesktop = window.innerWidth < 768;
   const [page, setPage] = useState(1);
   const cardPerPage = isNotDesktop ? 3 : 4;
@@ -118,7 +124,12 @@ const Projects = forwardRef((props, ref) => {
   return (
     <Wrapper ref={ref} className={"ProjectsRoot"}>
       <StyledBox pt={isNotDesktop ? 8 : 15} justifyContent={"center"}>
-        <StyledText color={"greyBlueTint"}>PROJECTS</StyledText>
+        <StyledText color={"greyBlueTint"}>
+          PROJECTS{" "}
+          <Button style={{ color: "white" }} onClick={handleOnChangeCard}>
+            NEXTLEVELMODE
+          </Button>
+        </StyledText>
       </StyledBox>
       <ContentWrapper id={"cardContentWrapper"} pt={1}>
         <StyledIconButtonBack onClick={handleOnArrowBack}>
@@ -137,9 +148,13 @@ const Projects = forwardRef((props, ref) => {
         >
           {projectList
             .slice(page * cardPerPage, page * cardPerPage + cardPerPage)
-            .map((item, key) => (
-              <ProjectCard item={item} key={key} />
-            ))}
+            .map((item, key) =>
+              nextLevelMode ? (
+                <ProjectCardV2 item={item} key={key} />
+              ) : (
+                <ProjectCard item={item} key={key} />
+              )
+            )}
         </StyledBox>
 
         <StyledIconButtonForward
