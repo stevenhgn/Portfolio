@@ -130,7 +130,8 @@ const Projects = forwardRef((props, ref) => {
   const [nextLevelMode, setNextLevelMode] = useState(false);
   const handleOnChangeCard = () => {
     setNextLevelMode(!nextLevelMode);
-    setCardPerPage(cardPerPage === 3 ? 4 : 3);
+    if (isNotDesktop) setCardPerPage(3);
+    else setCardPerPage(cardPerPage === 3 ? 4 : 3);
   };
   const handleOnArrowForward = () => {
     if (page < sum_page - 1) setPage(page + 1);
