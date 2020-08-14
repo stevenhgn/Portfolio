@@ -3,6 +3,7 @@ const themes = {
     spacing: 4,
     palette: {
       primary: "#007ACA",
+      navbarcolor: "#1E1E1E",
       fontblue: "#3EA2FF",
       primaryGreen: "#4D8400",
       // Neutrals

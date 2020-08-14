@@ -119,7 +119,7 @@ const CardWrapper = styled.div`
         min-width:225px;
         max-width:300px;
         min-height:50px;
-        max-height:200px;
+        max-height:150px;
         border-radius: 3px;
         justify-content:space-evenly;
         margin-bottom:10vw;
@@ -182,8 +182,8 @@ const StyledTextFieldMedia = styled(TextField)`
     /* screen width is less than 768px (medium) */
         min-width:100px;
         max-width:180px;
-        min-height:100px;
-        max-height:150px;
+        min-height:60px;
+        max-height:100px;
         
         
     `};

@@ -131,7 +131,8 @@ const Projects = forwardRef((props, ref) => {
   const handleOnChangeCard = () => {
     setNextLevelMode(!nextLevelMode);
     if (isNotDesktop) setCardPerPage(3);
-    else setCardPerPage(cardPerPage === 3 ? 4 : 3);
+    // on toggle show 3 card perpage if on phone
+    else setCardPerPage(cardPerPage === 3 ? 4 : 3); // if not on phone toggle between 3 and 4
   };
   const handleOnArrowForward = () => {
     if (page < sum_page - 1) setPage(page + 1);
@@ -191,7 +192,8 @@ const Projects = forwardRef((props, ref) => {
 const Wrapper = styled.div`
   ${spacing}
   ${palette}
-  background: url("/images/Project_v2.png") no-repeat;
+  /* background: url("/images/Project_v2.png") no-repeat; */
+  background-color:#252525;
 
   -webkit-background-size: cover;
   -moz-background-size: cover;
