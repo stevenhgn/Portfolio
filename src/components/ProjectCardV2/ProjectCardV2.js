@@ -1,7 +1,7 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useState } from "react";
 import styled from "styled-components";
 import { spacing, palette, typography } from "@material-ui/system";
-import { Icon, SvgIcon, TextField } from "@material-ui/core";
+import { Icon, SvgIcon, TextField, Button } from "@material-ui/core";
 import { StyledSpan, StyledH1 } from "../../shared/StyledTypography";
 import {
   StyledBox,
@@ -10,41 +10,62 @@ import {
 } from "../../shared/ContentWrapper";
 import media from "styled-media-query";
 import themes from "../../shared/theme";
+import ProjectCardDialog from "../../dialogs/ProjectCardDialog/ProjectCardDialog";
 
 const ProjectCardV2 = (props) => {
-  const isNotDesktop = window.innerHeight < 768;
+  const isNotDesktop = window.innerWidth < 768;
   const cardwrapper = document.getElementById("CardWrapper");
+  const [openDialog, setOpenDialog] = useState(false);
+
+  const handleOpenDialog = (bool) => {
+    setOpenDialog(true);
+  };
+  const handleCloseDialog = () => {
+    setOpenDialog(false);
+  };
   return (
-    <CardWrapper id="CardWrapper" m={"2vw"}>
-      <StyledBox flexDirection={"column"}>
-        <StyledImage
-          src={props.item.alterImageSmall}
-          onMouseOver={(e) =>
-            //   (e.currentTarget.src = require("../../../public/pattern/RENAS_Pattern_small.png"))
-            (e.currentTarget.src = props.item.alterImageExpand)
-          }
-          onMouseOut={(e) => (e.currentTarget.src = props.item.alterImageSmall)}
-        ></StyledImage>
-        <StyledSpan
-          color={"white"}
-          style={{
-            fontSize: isNotDesktop ? "5vw" : "2.5vw",
-            alignSelf: "center",
-          }}
-        >
-          {props.item.title}
-          {props.item.underTitle ? (
-            <StyledSpan
-              pl={"0.5vw"}
-              style={{
-                fontSize: isNotDesktop ? "1.5vw" : "1vw",
-              }}
-            >
-              - {props.item.underTitle}
-            </StyledSpan>
-          ) : null}
-        </StyledSpan>
-      </StyledBox>
+    <CardWrapper id="CardWrapper">
+      <Button onClick={handleOpenDialog}>
+        <StyledBox flexDirection={"column"}>
+          <StyledImage
+            src={props.item.alterImageSmall}
+            onMouseOver={(e) =>
+              //   (e.currentTarget.src = require("../../../public/pattern/RENAS_Pattern_small.png"))
+              (e.currentTarget.src = props.item.alterImageExpand)
+            }
+            onMouseOut={(e) =>
+              (e.currentTarget.src = props.item.alterImageSmall)
+            }
+          ></StyledImage>
+          <StyledSpan
+            color={"white"}
+            style={{
+              fontSize: isNotDesktop ? "4vw" : "2.5vw",
+              alignSelf: "center",
+            }}
+          >
+            {props.item.title}
+            {props.item.underTitle ? (
+              <StyledSpan
+                pl={"0.5vw"}
+                pb={"0.5vw"}
+                style={{
+                  fontSize: isNotDesktop ? "3vw" : "1vw",
+                }}
+              >
+                - {props.item.underTitle}
+              </StyledSpan>
+            ) : null}
+          </StyledSpan>
+        </StyledBox>
+      </Button>
+
+      {openDialog && (
+        <ProjectCardDialog
+          handleCloseDialog={handleCloseDialog}
+          item={props.item}
+        />
+      )}
     </CardWrapper>
   );
 };
@@ -65,14 +86,21 @@ const StyledImage = styled.img`
     ${palette}
     ${spacing}
     ${typography}
-    width:350px;
+    width:450px;
     ${media.lessThan("medium")`
     /* screen width is less than 768px (medium) */
-        min-width:100px;
-        max-width:180px;
-        min-height:100px;
-        max-height:180px;
+        min-width:90px;
+        max-width:160px;
+        min-height:90px;
+        max-height:160px;
         
+    `};
+    ${media.between("medium", "large")`
+    /* screen width is less than 768px (medium) */
+        min-width:180px;
+        max-width:300px;
+        min-height:180px;
+        max-height:300px;
         
     `};
     /* &:hover {
