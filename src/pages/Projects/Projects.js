@@ -118,7 +118,7 @@ const Projects = forwardRef((props, ref) => {
       index: 6,
     },
   ];
-
+  // TODO decide which mode to use normal cards or projectCardV2.
   const isNotDesktop = window.innerWidth < 768;
   const [page, setPage] = useState(0);
   const [cardPerPage, setCardPerPage] = useState(isNotDesktop ? 3 : 4);
@@ -130,7 +130,7 @@ const Projects = forwardRef((props, ref) => {
   const [nextLevelMode, setNextLevelMode] = useState(false);
   const handleOnChangeCard = () => {
     setNextLevelMode(!nextLevelMode);
-    setCardPerPage(3);
+    setCardPerPage(cardPerPage === 3 ? 4 : 3);
   };
   const handleOnArrowForward = () => {
     if (page < sum_page - 1) setPage(page + 1);
@@ -190,16 +190,8 @@ const Projects = forwardRef((props, ref) => {
 const Wrapper = styled.div`
   ${spacing}
   ${palette}
-  background: url("/images/Project_lightCoral.png") no-repeat;
+  background: url("/images/Project_v2.png") no-repeat;
 
-  ${media.lessThan("medium")`
-    /* screen width is less than 768px (medium) */
-    background: url("/images/Project_V2.png") no-repeat;
-  `};
-  ${media.between("medium", "large")`
-    /* screen width is between 768px (medium) and 1170px (large) */
-    background: url("/images/Project_v2.png") no-repeat;
-  `};
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
