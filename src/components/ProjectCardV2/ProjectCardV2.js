@@ -18,14 +18,12 @@ const ProjectCardV2 = (props) => {
     <CardWrapper id="CardWrapper" m={"2vw"}>
       <StyledBox flexDirection={"column"}>
         <StyledImage
-          src={"/pattern/RENAS_Pattern_small.png"}
+          src={props.item.alterImageSmall}
           onMouseOver={(e) =>
             //   (e.currentTarget.src = require("../../../public/pattern/RENAS_Pattern_small.png"))
-            (e.currentTarget.src = "/pattern/RENAS_Pattern_Expand.png")
+            (e.currentTarget.src = props.item.alterImageExpand)
           }
-          onMouseOut={(e) =>
-            (e.currentTarget.src = "/pattern/RENAS_Pattern_small.png")
-          }
+          onMouseOut={(e) => (e.currentTarget.src = props.item.alterImageSmall)}
         ></StyledImage>
         <StyledSpan
           color={"white"}
