@@ -31,11 +31,23 @@ const ProjectCardDialog = (props) => {
         <StyledBox>
           <DialogCardWrapper>
             <DialogContentWrapper>
+              <StyledSpan
+                style={{
+                  fontSize: isNotDesktop ? "2vw" : "1vw",
+                  fontWeight: "200",
+                }}
+                color={"contentRed"}
+              >
+                {props.item.label}
+              </StyledSpan>
               <StyledSpan fontSize={isNotDesktop ? "5vw" : "2vw"}>
                 {props.item.title}
                 {props.item.underTitle ? "-" + props.item.underTitle : null}
               </StyledSpan>
-              <StyledSpan fontSize={isNotDesktop ? "3vw" : "1vw"}>
+              <StyledSpan
+                fontSize={isNotDesktop ? "3vw" : "0.8vw"}
+                color={"purple"}
+              >
                 {props.item.date}
               </StyledSpan>
             </DialogContentWrapper>
@@ -49,9 +61,11 @@ const ProjectCardDialog = (props) => {
               <StyledBox
                 id={"footer-content"}
                 color={"fontblue"}
-                fontSize={isNotDesktop ? "2vw" : "1vw"}
+                fontSize={isNotDesktop ? "3vw" : "1vw"}
                 marginTop={"auto"}
+                flexShrink={3}
                 mb={"1.5vw"}
+                maxWidth={100}
               >
                 {props.item.techUsed.map((tech, key) => (
                   <StyledSpan key={key} pr={2}>
