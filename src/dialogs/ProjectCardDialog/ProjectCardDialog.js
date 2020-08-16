@@ -62,10 +62,8 @@ const ProjectCardDialog = (props) => {
                 id={"footer-content"}
                 color={"fontblue"}
                 fontSize={isNotDesktop ? "3vw" : "1vw"}
-                marginTop={"auto"}
-                flexShrink={3}
+                flexWrap={"wrap"}
                 mb={"1.5vw"}
-                maxWidth={100}
               >
                 {props.item.techUsed.map((tech, key) => (
                   <StyledSpan key={key} pr={2}>
