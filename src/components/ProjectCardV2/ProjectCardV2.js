@@ -45,17 +45,7 @@ const ProjectCardV2 = (props) => {
             }}
           >
             {props.item.title}
-            {props.item.underTitle ? (
-              <StyledSpan
-                pl={"0.5vw"}
-                pb={"0.5vw"}
-                style={{
-                  fontSize: isNotDesktop ? "3vw" : "1vw",
-                }}
-              >
-                - {props.item.underTitle}
-              </StyledSpan>
-            ) : null}
+            {props.item.underTitle ? "-" + props.item.underTitle : null}
           </StyledSpan>
         </StyledBox>
       </Button>

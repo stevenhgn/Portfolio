@@ -26,7 +26,17 @@ const Projects = forwardRef((props, ref) => {
       description:
         "Hos Interkodex har jeg jobbet med flere prosjekter (RENAS, EFO, NRF) hvor jeg har utviklet og forvaltet web løsninger med fokus på .Net, C#, HTML, Angular, JQuery, Typescript, Javascript, Microsoft SQL Server, Microsoft Team Foundation Server og Azure Dev Ops Server.",
       titleColor: "#4D96C5",
-      techUsed: ["#angular", "#.net", "#azure-devops", "#kanban"],
+      techUsed: [
+        "#angular",
+        "#typescript",
+        "#.net-core",
+        "#ASP.NET-MVC",
+        "#azure-devops",
+        "#bootstrap",
+        "#microsoft-sql-server",
+        "#entity-framework-core",
+        "#teams",
+      ],
       imgLogo: "/logo/NRF-small-logo.png",
       alterImageExpand: "/alterLogo/NRF_expand.png",
       alterImageSmall: "/alterLogo/NRF_small.png",
@@ -38,9 +48,19 @@ const Projects = forwardRef((props, ref) => {
       label: "INTERKODEX",
       title: "EFO",
       description:
-        "Prosjektet for Visma Consulting AS gikk ut på å lage et system for syntetisering av testdata.Målet var å lage en løsning som tillater brukere å enkelt generere testdata som ikke gjør noen kompromisser på personvern og gjør at man får testet løsninger uten å måtte forholde seg til data som inneholder personsensitiv informasjon.Løsningen består av tre deler, en generator for identiteter, en backend for en generisk håndtering av generering av data, og en frontend - applikasjon lar brukere se og opprette personer for bruk i testmiljøer.",
+        "Prosjektet for Visma Consulting AS gikk ut på å lage et system for syntetisering av testdata. Målet var å lage en løsning som tillater brukere å enkelt generere testdata som ikke gjør noen kompromisser på personvern og gjør at man får testet løsninger uten å måtte forholde seg til data som inneholder person-sensitiv informasjon.Løsningen består av tre deler, en generator for identiteter, en backend for en generisk håndtering av generering av data, og en frontend - applikasjon lar brukere se og opprette personer for bruk i testmiljøer.",
       titleColor: "contentRed",
-      techUsed: ["#react", "#.net", "#azure-devops", "#scrum"],
+      techUsed: [
+        "#angular",
+        "#typescript",
+        "#.net-core",
+        "#ASP.NET-MVC",
+        "#azure-devops",
+        "#bootstrap",
+        "#microsoft-sql-server",
+        "#entity-framework-core",
+        "#teams",
+      ],
       imgLogo: "/logo/EFO-small-logo.png",
       alterImageExpand: "/alterLogo/EFO_expand.png",
       alterImageSmall: "/alterLogo/EFO_small.png",
@@ -54,7 +74,16 @@ const Projects = forwardRef((props, ref) => {
       underTitle: "Avfallsdb",
       description: "Prosjektet for Interkodex AS gikk ut på........",
       titleColor: "contentRed",
-      techUsed: ["#react", "#.net", "#azure-devops", "#scrum", "#teams"],
+      techUsed: [
+        "#angular",
+        "#typescript",
+        "#.net-framework",
+        "#azure-devops",
+        "#bootstrap",
+        "#microsoft-sql-server",
+        "#entity-framework-core",
+        "#teams",
+      ],
       imgLogo: "/logo/RENAS-logo.png",
       alterImageExpand: "/alterLogo/RENAS_expand.png",
       alterImageSmall: "/alterLogo/RENAS_small.png",
@@ -68,7 +97,18 @@ const Projects = forwardRef((props, ref) => {
       underTitle: "Minside",
       description: "Prosjektet for Interkodex AS gikk ut på........",
       titleColor: "contentRed",
-      techUsed: ["#react", "#.net", "#azure-devops", "#scrum", "#teams"],
+      techUsed: [
+        "#angular",
+        "#typescript",
+        "#.net-framework",
+        "#azure-devops",
+        "#bootstrap",
+        "#microsoft-sql-server",
+        "#entity-framework-core",
+        "#jquery",
+        "#ASP.NET-MVC",
+        "#teams",
+      ],
       imgLogo: "/logo/RENAS-logo.png",
       alterImageExpand: "/alterLogo/RENAS_expand.png",
       alterImageSmall: "/alterLogo/RENAS_small.png",
@@ -80,9 +120,18 @@ const Projects = forwardRef((props, ref) => {
     {
       label: "VISMA",
       title: "VISMA SYNTH",
-      description: "Prosjektet for Interkodex AS gikk ut på........",
+      description:
+        "Prosjektet for Visma Consulting AS gikk ut på å lage et system for syntetisering av testdata. Målet var å lage en løsning som tillater brukere å enkelt generere testdata som ikke gjør noen kompromisser på personvern og gjør at man får testet løsninger uten å måtte forholde seg til data som inneholder person-sensitiv informasjon.Løsningen består av tre deler, en generator for identiteter, en backend for en generisk håndtering av generering av data, og en frontend - applikasjon lar brukere se og opprette personer for bruk i testmiljøer.",
       titleColor: "contentRed",
-      techUsed: ["#react", "#.net", "#azure-devops", "#scrum"],
+      techUsed: [
+        "#react",
+        "#.net",
+        "#azure-devops",
+        "#scrum",
+        "#figma",
+        "#restapi",
+        "#postman",
+      ],
       imgLogo: "/logo/Visma-logo.png",
       alterImageExpand: "/alterLogo/Visma_expand.png",
       alterImageSmall: "/alterLogo/Visma_small.png",
@@ -95,7 +144,15 @@ const Projects = forwardRef((props, ref) => {
       title: "MUNCHIES",
       description: "My first project with react as frontend......",
       titleColor: "contentRed",
-      techUsed: ["#react", "#mongodb", "#heroku"],
+      techUsed: [
+        "#reactjs",
+        "#mongodb",
+        "#heroku",
+        "#figma",
+        "#javascript",
+        "#nodejs",
+        "#restapi",
+      ],
       imgLogo: "/logo/Munchies-small-logo.png",
       alterImageExpand: "/alterLogo/MUNCHIES_expand.png",
       alterImageSmall: "/alterLogo/MUNCHIES_small.png",
@@ -109,7 +166,15 @@ const Projects = forwardRef((props, ref) => {
       description:
         "Personal project to create a interactive and creative portfolio....",
       titleColor: "contentRed",
-      techUsed: ["#react", "#zeitnow", "vercel"],
+      techUsed: [
+        "#reactjs",
+        "#zeitnow",
+        "#vercel",
+        "#figma",
+        "#javascript",
+        "#nodejs",
+        "#restapi",
+      ],
       imgLogo: "/logo/Portfolio-small-logo.png",
       alterImageExpand: "/alterLogo/PORTFOLIO_expand.png",
       alterImageSmall: "/alterLogo/PORTFOLIO_small.png",
@@ -144,7 +209,7 @@ const Projects = forwardRef((props, ref) => {
     <Wrapper ref={ref} className={"ProjectsRoot"}>
       <StyledBox pt={isNotDesktop ? 8 : 15} justifyContent={"center"}>
         <StyledText color={"greyBlueTint"}>
-          PROJECTS{" "}
+          PROJECTS
           <Button style={{ color: "white" }} onClick={handleOnChangeCard}>
             NEXTLEVELMODE
           </Button>
