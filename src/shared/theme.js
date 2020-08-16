@@ -26,6 +26,7 @@ const themes = {
       red: "#e94454",
       contentRed: "#E70641",
       lightCoral: "#FA6E6E",
+      lightnRose: "#FBF0F0",
       borderGrey: "#DDDDDD",
       lightGrey: "#D3D3D3",
     },

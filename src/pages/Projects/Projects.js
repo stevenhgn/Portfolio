@@ -52,7 +52,7 @@ const Projects = forwardRef((props, ref) => {
       label: "INTERKODEX",
       title: "RENAS",
       underTitle: "Avfallsdb",
-      description: "Prosjektet for Interkodex Consulting AS gikk ut på........",
+      description: "Prosjektet for Interkodex AS gikk ut på........",
       titleColor: "contentRed",
       techUsed: ["#react", "#.net", "#azure-devops", "#scrum"],
       imgLogo: "/logo/RENAS-logo.png",
@@ -66,7 +66,7 @@ const Projects = forwardRef((props, ref) => {
       label: "INTERKODEX",
       title: "RENAS",
       underTitle: "Minside",
-      description: "Prosjektet for Interkodex Consulting AS gikk ut på........",
+      description: "Prosjektet for Interkodex AS gikk ut på........",
       titleColor: "contentRed",
       techUsed: ["#react", "#.net", "#azure-devops", "#scrum"],
       imgLogo: "/logo/RENAS-logo.png",
@@ -80,7 +80,7 @@ const Projects = forwardRef((props, ref) => {
     {
       label: "VISMA",
       title: "VISMA SYNTH",
-      description: "Prosjektet for Interkodex Consulting AS gikk ut på........",
+      description: "Prosjektet for Interkodex AS gikk ut på........",
       titleColor: "contentRed",
       techUsed: ["#react", "#.net", "#azure-devops", "#scrum"],
       imgLogo: "/logo/Visma-logo.png",
@@ -121,13 +121,14 @@ const Projects = forwardRef((props, ref) => {
   // TODO decide which mode to use normal cards or projectCardV2.
   const isNotDesktop = window.innerWidth < 768;
   const [page, setPage] = useState(0);
-  const [cardPerPage, setCardPerPage] = useState(isNotDesktop ? 3 : 4);
+  const [nextLevelMode, setNextLevelMode] = useState(true);
+
+  const [cardPerPage, setCardPerPage] = useState(3);
   const sum_page = Math.ceil(projectList.length / cardPerPage);
   const handleOnArrowBack = () => {
     if (page > 0) setPage(page - 1);
     if (page - 1 === -1) setPage(sum_page - 1);
   };
-  const [nextLevelMode, setNextLevelMode] = useState(false);
   const handleOnChangeCard = () => {
     setNextLevelMode(!nextLevelMode);
     if (isNotDesktop) setCardPerPage(3);

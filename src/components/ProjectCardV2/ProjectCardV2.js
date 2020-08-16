@@ -86,7 +86,9 @@ const StyledImage = styled.img`
     ${palette}
     ${spacing}
     ${typography}
-    width:450px;
+    // TODO When the screen is at around 1512 x1060 Fix better flexing and resizing
+    min-width:300px;
+    max-width:450px;
     ${media.lessThan("medium")`
     /* screen width is less than 768px (medium) */
         min-width:90px;

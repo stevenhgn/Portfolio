@@ -49,9 +49,6 @@ const Home = () => {
     const navbar = document.getElementById("stickyNavbar");
     const arrowUp = document.getElementById("stickyNavigationArrow");
     const sticky = navbar.offsetTop;
-    console.log("---------------Window", window.pageYOffset);
-    console.log("window height", windowInnerHeight);
-    console.log("start ", start);
 
     if (window.pageYOffset >= sticky) {
       navbar.classList.add("sticky");
