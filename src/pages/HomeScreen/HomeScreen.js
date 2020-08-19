@@ -12,7 +12,7 @@ const HomeScreen = forwardRef((props, ref) => {
   const [showHelperBox, setShowHelperBox] = useState(false);
   useEffect(() => {
     setTimeout(() => {
-      setShowHelperBox(true);
+      if (!showHelperBox) setShowHelperBox(true);
     }, 2000);
   }, []);
   const handleClose = () => {
@@ -39,7 +39,7 @@ const HomeScreen = forwardRef((props, ref) => {
           variant={"filled"}
           // style={{ minWidth: "400px" }}
         >
-          Scroll down for more content!
+          Scroll up or down for more content!
         </StyledAlert>
       </Snackbar>
     </Wrapper>

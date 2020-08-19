@@ -20,6 +20,7 @@ import { StyledH1, StyledPara } from "../../shared/StyledTypography";
 import Projects from "../Projects/Projects";
 import media from "styled-media-query";
 import Experiences from "../Experiences/Experiences";
+import ContactDialog from "../../dialogs/ContactDialog/ContactDialog";
 
 const scrollToRef = (ref) => {
   ref.current.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -38,6 +39,7 @@ const Home = () => {
   const projectsRef = React.createRef();
   var start = 0;
   const [currPage, setCurrPage] = useState(0);
+  const [openContact, setOpenContact] = useState(true);
   const initalHeight = window.innerHeight;
   var windowInnerHeight = window.innerHeight;
   const pageList = [homeScreenRef, aboutRef, expRef, projectsRef];
@@ -72,6 +74,12 @@ const Home = () => {
       scrollToRef(pageList[currPageIndex - 1]);
       setCurrPage(currPageIndex - 1);
     }
+  };
+  const handleOpenDialog = (bool) => {
+    setOpenContact(true);
+  };
+  const handleCloseDialog = () => {
+    setOpenContact(false);
   };
   return (
     <HomeWrapper>
@@ -122,7 +130,7 @@ const Home = () => {
               </LinkWrapper>
               <LinkWrapper
                 pl={"2vw"}
-                to={"/Contact"}
+                onClick={handleOpenDialog}
                 // onClick={() => scrollToRef()}
               >
                 <StyledBox color={"white"}>Contact</StyledBox>
@@ -173,6 +181,7 @@ const Home = () => {
           <Projects ref={projectsRef} />
         </ContentWrapper>
       </Router>
+      {openContact && <ContactDialog handleCloseDialog={handleCloseDialog} />}
     </HomeWrapper>
   );
 };

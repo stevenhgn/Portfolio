@@ -5,7 +5,9 @@ import { IconButton } from "@material-ui/core";
 import ExpandLess from "@material-ui/icons/ExpandLess";
 import ExpandMore from "@material-ui/icons/ExpandMore";
 import themes from "./theme";
-
+import { Mail, VpnKey } from "@material-ui/icons/";
+import FileCopy from "@material-ui/icons/FileCopy";
+import GitHub from "@material-ui/icons/GitHub";
 const StyledGetAppIcon = styled(GetAppIcon)`
   ${spacing}
   ${palette}
@@ -48,4 +50,28 @@ const StyledArrowDown = styled(ExpandMore)`
   color:white;
   opacity:40%
 `;
-export { StyledIconButton, StyledGetAppIcon, StyledArrowUp, StyledArrowDown };
+
+const StyledMail = styled(Mail)`
+  ${spacing}
+  ${palette}
+`;
+
+const StyledCopy = styled(FileCopy)`
+  ${spacing}
+  ${palette}
+`;
+
+const StyledGitHub = styled(GitHub)`
+  ${spacing}
+  ${palette}
+`;
+
+export {
+  StyledIconButton,
+  StyledGetAppIcon,
+  StyledArrowUp,
+  StyledArrowDown,
+  StyledMail,
+  StyledCopy,
+  StyledGitHub,
+};

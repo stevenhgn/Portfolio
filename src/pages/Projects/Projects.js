@@ -23,6 +23,7 @@ const Projects = forwardRef((props, ref) => {
     {
       label: "INTERKODEX",
       title: "NRF",
+      fullTitle: "Norske Rørgrossisters Forening",
       description:
         "Hos Interkodex har jeg jobbet med flere prosjekter (RENAS, EFO, NRF) hvor jeg har utviklet og forvaltet web løsninger med fokus på .Net, C#, HTML, Angular, JQuery, Typescript, Javascript, Microsoft SQL Server, Microsoft Team Foundation Server og Azure Dev Ops Server.",
       titleColor: "#4D96C5",
@@ -47,6 +48,7 @@ const Projects = forwardRef((props, ref) => {
     {
       label: "INTERKODEX",
       title: "EFO",
+      fullTitle: "Elektroforeningen",
       description:
         "Prosjektet for Visma Consulting AS gikk ut på å lage et system for syntetisering av testdata. Målet var å lage en løsning som tillater brukere å enkelt generere testdata som ikke gjør noen kompromisser på personvern og gjør at man får testet løsninger uten å måtte forholde seg til data som inneholder person-sensitiv informasjon.Løsningen består av tre deler, en generator for identiteter, en backend for en generisk håndtering av generering av data, og en frontend - applikasjon lar brukere se og opprette personer for bruk i testmiljøer.",
       titleColor: "contentRed",
@@ -186,7 +188,6 @@ const Projects = forwardRef((props, ref) => {
   // TODO decide which mode to use normal cards or projectCardV2.
   const isNotDesktop = window.innerWidth < 768;
   const [page, setPage] = useState(0);
-  const [nextLevelMode, setNextLevelMode] = useState(true);
 
   const [cardPerPage, setCardPerPage] = useState(3);
   const sum_page = Math.ceil(projectList.length / cardPerPage);
@@ -195,7 +196,6 @@ const Projects = forwardRef((props, ref) => {
     if (page - 1 === -1) setPage(sum_page - 1);
   };
   const handleOnChangeCard = () => {
-    setNextLevelMode(!nextLevelMode);
     if (isNotDesktop) setCardPerPage(3);
     // on toggle show 3 card perpage if on phone
     else setCardPerPage(cardPerPage === 3 ? 4 : 3); // if not on phone toggle between 3 and 4
@@ -208,12 +208,7 @@ const Projects = forwardRef((props, ref) => {
   return (
     <Wrapper ref={ref} className={"ProjectsRoot"}>
       <StyledBox pt={isNotDesktop ? 8 : 15} justifyContent={"center"}>
-        <StyledText color={"greyBlueTint"}>
-          PROJECTS
-          <Button style={{ color: "white" }} onClick={handleOnChangeCard}>
-            NEXTLEVELMODE
-          </Button>
-        </StyledText>
+        <StyledText color={"greyBlueTint"}>PROJECTS</StyledText>
       </StyledBox>
       <ContentWrapper id={"cardContentWrapper"} pt={1}>
         <StyledIconButtonBack onClick={handleOnArrowBack}>
@@ -233,13 +228,9 @@ const Projects = forwardRef((props, ref) => {
         >
           {projectList
             .slice(page * cardPerPage, page * cardPerPage + cardPerPage)
-            .map((item, key) =>
-              nextLevelMode ? (
-                <ProjectCardV2 item={item} key={key} />
-              ) : (
-                <ProjectCard item={item} key={key} />
-              )
-            )}
+            .map((item, key) => (
+              <ProjectCardV2 item={item} key={key} />
+            ))}
         </StyledBox>
 
         <StyledIconButtonForward

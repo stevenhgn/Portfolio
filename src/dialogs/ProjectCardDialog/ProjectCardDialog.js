@@ -43,7 +43,13 @@ const ProjectCardDialog = (props) => {
               <StyledSpan fontSize={isNotDesktop ? "5vw" : "2vw"}>
                 {props.item.title}
                 {props.item.underTitle ? "-" + props.item.underTitle : null}
+                <StyledSpan fontSize={isNotDesktop ? "3vw" : "1vw"}>
+                  {props.item.fullTitle
+                    ? "(" + props.item.fullTitle + ")"
+                    : null}
+                </StyledSpan>
               </StyledSpan>
+
               <StyledSpan
                 fontSize={isNotDesktop ? "3vw" : "0.8vw"}
                 color={"purple"}
