@@ -1,12 +1,23 @@
-import React, { forwardRef } from "react";
+import React, { forwardRef, useEffect, useState } from "react";
 import styled from "styled-components";
 import { spacing, palette, typography } from "@material-ui/system";
 import { StyledH1, StyledSpan } from "../../shared/StyledTypography";
 import { ImageWrapper } from "../../shared/ContentWrapper";
 import media from "styled-media-query";
 import themes from "../../shared/theme";
+import { Snackbar } from "@material-ui/core";
+import { StyledAlert } from "../../shared/Alert";
 
 const HomeScreen = forwardRef((props, ref) => {
+  const [showHelperBox, setShowHelperBox] = useState(false);
+  useEffect(() => {
+    setTimeout(() => {
+      setShowHelperBox(true);
+    }, 2000);
+  }, []);
+  const handleClose = () => {
+    setShowHelperBox(false);
+  };
   return (
     <Wrapper ref={ref}>
       <MainPageTitle color={"lightgrey"} fontSize={"80px"}>
@@ -16,6 +27,21 @@ const HomeScreen = forwardRef((props, ref) => {
           A fullstack developer with a slightly bigger passion to frontend.
         </MainPageUnderTitle>
       </MainPageTitle>
+      <Snackbar
+        anchorOrigin={{ vertical: "top", horizontal: "center" }}
+        open={showHelperBox}
+        autoHideDuration={6000}
+        onClose={handleClose}
+      >
+        <StyledAlert
+          onClose={handleClose}
+          severity={"info"}
+          variant={"filled"}
+          // style={{ minWidth: "400px" }}
+        >
+          Scroll down for more content!
+        </StyledAlert>
+      </Snackbar>
     </Wrapper>
   );
 });
