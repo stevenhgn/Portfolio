@@ -40,11 +40,11 @@ const ProjectCardV2 = (props) => {
           <StyledSpan
             color={"white"}
             style={{
-              fontSize: isNotDesktop ? "4vw" : "2.5vw",
+              fontSize: isNotDesktop ? "3vw" : "1vw",
               alignSelf: "center",
             }}
           >
-            {props.item.title}
+            Les om prosjektet {props.item.title}
             {props.item.underTitle ? "-" + props.item.underTitle : null}
           </StyledSpan>
         </StyledBox>
@@ -76,6 +76,7 @@ const StyledImage = styled.img`
     ${palette}
     ${spacing}
     ${typography}
+    align-self: center;
     // TODO When the screen is at around 1512 x1060 Fix better flexing and resizing
     min-width:300px;
     max-width:450px;

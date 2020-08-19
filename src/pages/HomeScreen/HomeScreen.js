@@ -24,7 +24,7 @@ const HomeScreen = forwardRef((props, ref) => {
         {/* a portfolio. */}
         Hi, I'm Steven! <br />
         <MainPageUnderTitle color={"grey"}>
-          A fullstack developer with a slightly bigger passion to frontend.
+          A fullstack developer with a slightly bigger passion for frontend.
         </MainPageUnderTitle>
       </MainPageTitle>
       <Snackbar
