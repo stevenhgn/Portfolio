@@ -12,6 +12,7 @@ import {
   TextField,
   IconButton,
   Tooltip,
+  Button,
 } from "@material-ui/core";
 import {
   StyledBox,
@@ -49,7 +50,8 @@ const ContactDialog = (props) => {
             <DialogContent>
               <StyledSpan
                 style={{
-                  fontSize: isNotDesktop ? "3vw" : "2vw",
+                  fontSize: isNotDesktop ? "5vw" : "2vw",
+                  borderBottom: "2px solid #007ACA",
                 }}
               >
                 Contact me
@@ -124,6 +126,7 @@ const ContactDialog = (props) => {
                   >
                     Description
                   </StyledTextFieldMedia>
+                  <Button>SUBMIT</Button>
                 </DialogContentWrapper>
               ) : null}
             </StyledBox>
@@ -147,10 +150,13 @@ const ContactDialog = (props) => {
                 >
                   Description
                 </StyledTextFieldMedia>
+                <StyledBox mt={1}>
+                  <Button>SUBMIT</Button>
+                </StyledBox>
               </DialogContentWrapper>
             ) : null}
           </DialogCardWrapper>
-          <ImageWrapper style={{ flex: 2 }}></ImageWrapper>
+          <StyledSpan style={{ flex: 2 }}></StyledSpan>
         </StyledBox>
       </DialogMedia>
     </Wrapper>
@@ -179,6 +185,10 @@ const DialogContentWrapper = styled(DialogContent)`
   ${media.greaterThan("large")`
     min-height: 300px;
   `};
+  ${media.lessThan("medium")`
+/* screen width is less than 768px (medium) */
+    min-height:300px;
+`};
   /* min-width:300px; */
 `;
 const StyledTextFieldMedia = styled(TextField)`

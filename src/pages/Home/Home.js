@@ -130,6 +130,7 @@ const Home = () => {
               </LinkWrapper>
               <LinkWrapper
                 pl={"2vw"}
+                to={"/Contacts"}
                 onClick={handleOpenDialog}
                 // onClick={() => scrollToRef()}
               >
