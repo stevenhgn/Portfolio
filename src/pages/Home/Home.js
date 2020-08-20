@@ -39,7 +39,7 @@ const Home = () => {
   const projectsRef = React.createRef();
   var start = 0;
   const [currPage, setCurrPage] = useState(0);
-  const [openContact, setOpenContact] = useState(true);
+  const [openContact, setOpenContact] = useState(false);
   const initalHeight = window.innerHeight;
   var windowInnerHeight = window.innerHeight;
   const pageList = [homeScreenRef, aboutRef, expRef, projectsRef];
