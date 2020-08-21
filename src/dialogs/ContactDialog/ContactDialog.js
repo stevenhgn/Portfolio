@@ -21,7 +21,11 @@ import {
   StyledTextField,
 } from "../../shared/ContentWrapper";
 import themes from "../../shared/theme";
-import { StyledSpan, StyledPara } from "../../shared/StyledTypography";
+import {
+  StyledSpan,
+  StyledPara,
+  StyledH1,
+} from "../../shared/StyledTypography";
 import {
   StyledIconButton,
   StyledCopy,
@@ -112,6 +116,7 @@ const ContactDialog = (props) => {
                 <DialogContentWrapper>
                   Write me a mail
                   <StyledTextFieldMedia
+                    fullWidth
                     label={"Name"}
                     autoFocus
                     variant={"filled"}
@@ -121,8 +126,9 @@ const ContactDialog = (props) => {
                   <StyledTextFieldMedia
                     label={"Description"}
                     variant={"filled"}
-                    multiline
+                    fullWidth
                     rows={5}
+                    multiline
                   >
                     Description
                   </StyledTextFieldMedia>
@@ -131,25 +137,29 @@ const ContactDialog = (props) => {
               ) : null}
             </StyledBox>
             {isNotDesktop ? (
-              <DialogContentWrapper>
-                Write me a mail
-                <StyledTextFieldMedia
-                  label={"Name"}
-                  fullWidth
-                  autoFocus
-                  variant={"filled"}
-                >
-                  Name
-                </StyledTextFieldMedia>
-                <StyledTextFieldMedia
-                  label={"Description"}
-                  fullWidth
-                  variant={"filled"}
-                  multiline
-                  rows={5}
-                >
-                  Description
-                </StyledTextFieldMedia>
+              <DialogContentWrapper style={{ alignItems: "center" }}>
+                <StyledSpan mb={1}> Write me a mail</StyledSpan>
+                <StyledBox mb={1}>
+                  <StyledTextFieldMedia
+                    label={"Name"}
+                    fullWidth
+                    autoFocus
+                    variant={"filled"}
+                  >
+                    Name
+                  </StyledTextFieldMedia>
+                </StyledBox>
+                <StyledBox mb={2}>
+                  <StyledTextFieldMedia
+                    label={"Description"}
+                    fullWidth
+                    variant={"filled"}
+                    multiline
+                    rows={5}
+                  >
+                    Description
+                  </StyledTextFieldMedia>
+                </StyledBox>
                 <StyledBox mt={1}>
                   <Button>SUBMIT</Button>
                 </StyledBox>
@@ -187,7 +197,8 @@ const DialogContentWrapper = styled(DialogContent)`
   `};
   ${media.lessThan("medium")`
 /* screen width is less than 768px (medium) */
-    min-height:300px;
+    min-height:150px;
+    max-height:250px;
 `};
   /* min-width:300px; */
 `;
@@ -223,10 +234,10 @@ const StyledTextFieldMedia = styled(TextField)`
     `};
     ${media.between("medium", "large")`
         /* screen width is between 768px (medium) and 1170px (large) */
-        min-width:50px;
-        max-width:100px;
+        /* min-width:50px;
+        max-width:150px;
         min-height:10px;
-        max-height:100px;
+        max-height:150px; */
         /* width: 40%; */
     `};
 `;

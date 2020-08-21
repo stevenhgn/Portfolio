@@ -25,7 +25,7 @@ const Projects = forwardRef((props, ref) => {
       title: "NRF",
       fullTitle: "Norske Rørgrossisters Forening",
       description:
-        "Hos Interkodex har jeg jobbet med flere prosjekter (RENAS, EFO, NRF) hvor jeg har utviklet og forvaltet web løsninger med fokus på .Net, C#, HTML, Angular, JQuery, Typescript, Javascript, Microsoft SQL Server, Microsoft Team Foundation Server og Azure Dev Ops Server.",
+        "NRF Databasen gir rørleggeren mulighet for å finne relevante produkter til jobben, søke produktdata, dokumenter, fotografere og notere underveis for deretter sender dokumentasjon direkte til sin kunde når oppdrager er utført. Prosjektet har gårt ut på å lage en helt ny løsning, samt å jobbe med Git i Azure. ",
       titleColor: "#4D96C5",
       techUsed: [
         "#angular",
@@ -50,7 +50,7 @@ const Projects = forwardRef((props, ref) => {
       title: "EFO",
       fullTitle: "Elektroforeningen",
       description:
-        "Prosjektet for Visma Consulting AS gikk ut på å lage et system for syntetisering av testdata. Målet var å lage en løsning som tillater brukere å enkelt generere testdata som ikke gjør noen kompromisser på personvern og gjør at man får testet løsninger uten å måtte forholde seg til data som inneholder person-sensitiv informasjon.Løsningen består av tre deler, en generator for identiteter, en backend for en generisk håndtering av generering av data, og en frontend - applikasjon lar brukere se og opprette personer for bruk i testmiljøer.",
+        "Løsningen er en felles database hvor produsenter og importører kan legge inn og ajourføre produktdata, og grossistene har en produktdatabase for å hente ut produktdata.",
       titleColor: "contentRed",
       techUsed: [
         "#angular",
@@ -74,7 +74,8 @@ const Projects = forwardRef((props, ref) => {
       label: "INTERKODEX",
       title: "RENAS",
       underTitle: "Avfallsdb",
-      description: "Prosjektet for Interkodex AS gikk ut på........",
+      description:
+        "RENAS er Norges ledende EE-returselskap. Løsningen er en avfallsdatabase hvor kunden kan håndtere leveranser, eksport og håndtering av avfall. Den har eksistert i over en 5-6 årsperiode. Kunden har blant annet hatt et ønske om å modernisere løsningen, og da har jeg vært med på hjelpe dem med dette ved å blant annet skrive om gammel jQuery code over til Angular.",
       titleColor: "contentRed",
       techUsed: [
         "#angular",
@@ -97,7 +98,8 @@ const Projects = forwardRef((props, ref) => {
       label: "INTERKODEX",
       title: "RENAS",
       underTitle: "Minside",
-      description: "Prosjektet for Interkodex AS gikk ut på........",
+      description:
+        "RENAS minside er administrasjonsside for ansatte og medlemmene. Løsningen inneholder blant annet statistikk, email og faktureringsmuligheter. Kunden hadde også det samme problemet om å få modernisert løsning, og da har jeg hjulpet dem med å løse dette ved å blant annet konverte jQuery code om til Angular.",
       titleColor: "contentRed",
       techUsed: [
         "#angular",
