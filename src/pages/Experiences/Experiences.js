@@ -37,7 +37,7 @@ const Experiences = forwardRef((props, ref) => {
       techUsed: ["React", ".NET", "Azure devops", "Scrum"],
       imgLogo: "/logo/Visma-logo.png",
       date: "Summer 2020",
-      downloadAttest: "",
+      downloadAttest: "Attest_Steven.pdf",
       index: 1,
     },
   ];
@@ -120,17 +120,18 @@ const Experiences = forwardRef((props, ref) => {
                   {experienceList[selectedExpe].date}
                 </StyledSpan>
               </StyledBox>
-              <StyledBox alignItems={"center"}>
-                <Tooltip
-                  title={
-                    <StyledSpan fontSize={"1.5vw"}>Last ned attest</StyledSpan>
-                  }
-                >
-                  <StyledIconButton>
-                    <StyledGetAppIcon />
-                  </StyledIconButton>
-                </Tooltip>
-              </StyledBox>
+              {experienceList[selectedExpe].downloadAttest ? (
+                <StyledBox alignItems={"center"} flexDirection={"column"}>
+                  <a href="Attest_Steven.pdf" download>
+                    <StyledIconButton>
+                      <StyledGetAppIcon />
+                    </StyledIconButton>
+                  </a>
+                  <StyledSpan fontSize={isNotDesktop ? "2vw" : "1vw"}>
+                    Last ned attest
+                  </StyledSpan>
+                </StyledBox>
+              ) : null}
             </StyledBox>
 
             <StyledBox flex={1} color={"white"} pl={"auto"} mb={"5vw"}>

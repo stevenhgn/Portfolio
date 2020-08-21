@@ -18,6 +18,7 @@ import FitnessCenter from "@material-ui/icons/FitnessCenter";
 import Flight from "@material-ui/icons/Flight";
 import media from "styled-media-query";
 const About = forwardRef((props, ref) => {
+  const isNotDesktop = window.innerWidth < 768;
   const aboutCard = [
     <ContentWrapper flex={1} key={0}>
       <AboutCard
@@ -91,7 +92,7 @@ const About = forwardRef((props, ref) => {
           </StyledSpan>
           <StyledImage
             src={"images/Aboutme_activities_lightCoral.png"}
-            // style={{ width: "60%" }}
+            style={{ width: isNotDesktop ? "100%" : "60%" }}
           ></StyledImage>
         </StyledBox>
       </StyledBox>

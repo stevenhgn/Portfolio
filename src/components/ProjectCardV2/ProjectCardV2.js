@@ -72,7 +72,6 @@ const CardWrapper = styled.div`
 
 `;
 const StyledImage = styled.img`
-    /* object-fit:; */
     ${palette}
     ${spacing}
     ${typography}
