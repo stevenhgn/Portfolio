@@ -122,7 +122,7 @@ const Experiences = forwardRef((props, ref) => {
               </StyledBox>
               {experienceList[selectedExpe].downloadAttest ? (
                 <StyledBox alignItems={"center"} flexDirection={"column"}>
-                  <a href="Attest_Steven.pdf" download>
+                  <a href="Attest_Steven.pdf" download target="_blank">
                     <StyledIconButton>
                       <StyledGetAppIcon />
                     </StyledIconButton>
