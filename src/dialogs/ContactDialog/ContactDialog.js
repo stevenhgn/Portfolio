@@ -114,25 +114,31 @@ const ContactDialog = (props) => {
               </DialogContentWrapper>
               {!isNotDesktop ? (
                 <DialogContentWrapper>
-                  Write me a mail
-                  <StyledTextFieldMedia
-                    fullWidth
-                    label={"Name"}
-                    autoFocus
-                    variant={"filled"}
-                  >
-                    Name
-                  </StyledTextFieldMedia>
-                  <StyledTextFieldMedia
-                    label={"Description"}
-                    variant={"filled"}
-                    fullWidth
-                    rows={5}
-                    multiline
-                  >
-                    Description
-                  </StyledTextFieldMedia>
-                  <Button>SUBMIT</Button>
+                  <StyledSpan mb={1}> Write me a mail</StyledSpan>
+                  <StyledBox mb={1}>
+                    <StyledTextFieldMedia
+                      fullWidth
+                      label={"Name"}
+                      autoFocus
+                      variant={"filled"}
+                    >
+                      Name
+                    </StyledTextFieldMedia>
+                  </StyledBox>
+                  <StyledBox>
+                    <StyledTextFieldMedia
+                      label={"Description"}
+                      variant={"filled"}
+                      fullWidth
+                      rows={5}
+                      multiline
+                    >
+                      Description
+                    </StyledTextFieldMedia>
+                  </StyledBox>
+                  <StyledBox mt={1}>
+                    <Button>SUBMIT</Button>
+                  </StyledBox>
                 </DialogContentWrapper>
               ) : null}
             </StyledBox>
