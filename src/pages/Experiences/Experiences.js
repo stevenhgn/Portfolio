@@ -149,7 +149,9 @@ const Experiences = forwardRef((props, ref) => {
                 multiline
                 fullWidth
                 rows={10}
-                // InputProps={{ style: { fontSize: "2vw"} }}
+                InputProps={{
+                  style: { padding: isNotDesktop ? "20px" : null },
+                }}
                 disabled
                 value={experienceList[selectedExpe].description}
               ></StyledTextFieldMediaPhone>

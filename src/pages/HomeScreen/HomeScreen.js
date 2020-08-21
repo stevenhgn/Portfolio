@@ -74,6 +74,13 @@ const MainPageTitle = styled.h1`
       /* screen width is greater than 1170px (large) */
       margin-left:25%;
   `};
+   ${media.lessThan("medium")`
+    /* screen width is less than 768px (medium) */
+    `};
+    ${media.between("medium", "large")`
+    /* screen width is less than 768px (medium) */
+        font-size:60px;
+    `};
 `;
 const MainPageUnderTitle = styled.p`
   ${spacing}
@@ -93,7 +100,11 @@ const MainPageUnderTitle = styled.p`
     font-size: 6vw;
     margin-left:2%;
   `};
-
+  ${media.between("medium", "large")`
+    /* screen width is less than 768px (medium) */
+        font-size:5vw;
+        
+    `};
 
 `;
 
