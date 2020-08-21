@@ -104,14 +104,14 @@ const Experiences = forwardRef((props, ref) => {
               >
                 <StyledText
                   color={experienceList[selectedExpe].nameColor}
-                  fontSize={"4vw"}
+                  fontSize={isNotDesktop ? "6vw" : "4vw"}
                   mt={1}
                   mb={1}
                 >
                   {experienceList[selectedExpe].name}
                 </StyledText>
                 <StyledSpan
-                  fontSize={"1.5vw"}
+                  fontSize={isNotDesktop ? "3vw" : "1.5vw"}
                   color={"white"}
                   mb={3}
                   ml={1}
@@ -121,9 +121,16 @@ const Experiences = forwardRef((props, ref) => {
                 </StyledSpan>
               </StyledBox>
               {experienceList[selectedExpe].downloadAttest ? (
-                <StyledBox alignItems={"center"} flexDirection={"column"}>
+                <StyledBox
+                  alignItems={"center"}
+                  flexDirection={"column"}
+                  ml={2}
+                >
                   <a href="Attest_Steven.pdf" download target="_blank">
-                    <StyledIconButton>
+                    <StyledIconButton
+                      style={{ padding: 0, paddingBottom: 2 }}
+                      p={0}
+                    >
                       <StyledGetAppIcon />
                     </StyledIconButton>
                   </a>
