@@ -72,13 +72,16 @@ const CardWrapper = styled.div`
 
 `;
 const StyledImage = styled.img`
+    // TODO When the screen is at around 1512 x1060 Fix better flexing and resizing
     ${palette}
     ${spacing}
     ${typography}
     align-self: center;
-    // TODO When the screen is at around 1512 x1060 Fix better flexing and resizing
-    min-width:300px;
-    max-width:450px;
+
+    ${media.greaterThan("large")`
+      min-width:300px;
+      max-width:300px;
+    `};
     ${media.lessThan("medium")`
     /* screen width is less than 768px (medium) */
         min-width:90px;
@@ -90,7 +93,7 @@ const StyledImage = styled.img`
     ${media.between("medium", "large")`
     /* screen width is less than 768px (medium) */
         min-width:180px;
-        max-width:300px;
+        max-width:250px;
         min-height:180px;
         max-height:300px;
         

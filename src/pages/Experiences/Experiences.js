@@ -234,7 +234,7 @@ ${spacing}
   ${media.between("medium", "large")`
     /* screen width is between 768px (medium) and 1170px (large) */
     height: 40%;
-    display:none;
+    display: flex;
     /* width: 40%; */
     `}
 `;
@@ -254,32 +254,7 @@ ${spacing}
   ${media.between("medium", "large")`
     /* screen width is between 768px (medium) and 1170px (large) */
     height: 40%;
-    display:flex;
-    /* width: 40%; */
-    `}
-    ${media.greaterThan("large")`
-  /* screen width is greater than 1170px (large) */
-    display: none;
-  `}
- 
-`;
-const StyledMediaDescriptionBoxPhone = styled(Box)`
-${spacing}
-  ${palette}
-  ${typography}
-  /* flex-wrap: wrap; */
-  display:none;
-  /* display: flex; */
-  flex-direction: 'row';
-  ${media.lessThan("medium")`
-    /* screen width is less than 768px (medium) */
-    height: 20%;
-    display:flex;
-    `}
-  ${media.between("medium", "large")`
-    /* screen width is between 768px (medium) and 1170px (large) */
-    height: 40%;
-    display:flex;
+    display:none;
     /* width: 40%; */
     `}
     ${media.greaterThan("large")`
