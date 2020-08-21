@@ -141,7 +141,7 @@ const Experiences = forwardRef((props, ref) => {
               ) : null}
             </StyledBox>
 
-            <StyledBox flex={1} color={"white"} pl={"auto"} mb={"5vw"}>
+            <StyledBox flex={1} color={"white"} pl={"auto"} mb={"8vw"}>
               <StyledTextFieldMediaPhone
                 type="input"
                 // label="Description"
@@ -149,9 +149,6 @@ const Experiences = forwardRef((props, ref) => {
                 multiline
                 fullWidth
                 rows={10}
-                InputProps={{
-                  style: { padding: isNotDesktop ? "20px" : null },
-                }}
                 disabled
                 value={experienceList[selectedExpe].description}
               ></StyledTextFieldMediaPhone>
