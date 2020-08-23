@@ -135,7 +135,7 @@ const Experiences = forwardRef((props, ref) => {
                     </StyledIconButton>
                   </a>
                   <StyledSpan fontSize={isNotDesktop ? "2vw" : "1vw"}>
-                    Last ned attest
+                    Job certificate
                   </StyledSpan>
                 </StyledBox>
               ) : null}

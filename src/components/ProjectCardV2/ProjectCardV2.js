@@ -29,10 +29,10 @@ const ProjectCardV2 = (props) => {
         <StyledBox flexDirection={"column"}>
           <StyledImage
             src={props.item.alterImageSmall}
-            onMouseOver={(e) =>
-              //   (e.currentTarget.src = require("../../../public/pattern/RENAS_Pattern_small.png"))
-              (e.currentTarget.src = props.item.alterImageExpand)
-            }
+            // onMouseOver={(e) =>
+            //   //   (e.currentTarget.src = require("../../../public/pattern/RENAS_Pattern_small.png"))
+            //   (e.currentTarget.src = props.item.alterImageExpand)
+            // }
             onMouseOut={(e) =>
               (e.currentTarget.src = props.item.alterImageSmall)
             }

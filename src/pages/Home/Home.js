@@ -225,6 +225,7 @@ const NavBarSticker = styled.div`
   position:fixed;
   top: 0;
   width: 100vw;
+  z-index: 1;
   ${media.lessThan("medium")`
     /* screen width is less than 768px (medium) */
     font-size:12px;
