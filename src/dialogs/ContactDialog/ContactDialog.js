@@ -3,6 +3,7 @@ import React, { forwardRef, useState } from "react";
 import styled from "styled-components";
 import { spacing, palette, typography } from "@material-ui/system";
 import media from "styled-media-query";
+import Launch from "@material-ui/icons/Launch";
 import {
   Dialog,
   DialogTitle,
@@ -46,7 +47,7 @@ const ContactDialog = (props) => {
       <DialogMedia
         fullWidth={true}
         open={open}
-        maxWidth={"md"}
+        maxWidth={"sm"}
         onClose={handleClose}
       >
         <StyledBox>
@@ -70,13 +71,13 @@ const ContactDialog = (props) => {
                   <StyledSpan>Steven.hgng@gmail.com</StyledSpan>
                   <Tooltip
                     style={{ marginLeft: "auto" }}
-                    title={
-                      <StyledPara fontSize={"13px"}>Kopier mailen</StyledPara>
-                    }
+                    title={<StyledPara fontSize={"13px"}>Send mail</StyledPara>}
                   >
-                    <IconButton>
-                      <StyledCopy />
-                    </IconButton>
+                    <a href="mailto:steven.hgng@gmail.com" target="_blank">
+                      <IconButton>
+                        <Launch />
+                      </IconButton>
+                    </a>
                   </Tooltip>
                 </StyledBox>
                 <StyledBox alignItems={"center"}>
@@ -87,12 +88,19 @@ const ContactDialog = (props) => {
                   <Tooltip
                     style={{ marginLeft: "auto" }}
                     title={
-                      <StyledPara fontSize={"13px"}>Kopier linken</StyledPara>
+                      <StyledPara fontSize={"13px"}>
+                        Open LinkedIn in new tab
+                      </StyledPara>
                     }
                   >
-                    <IconButton>
-                      <StyledCopy />
-                    </IconButton>
+                    <a
+                      href="https://www.linkedin.com/in/steven-nguyen-895487144/"
+                      target="_blank"
+                    >
+                      <IconButton>
+                        <Launch />
+                      </IconButton>
+                    </a>
                   </Tooltip>
                 </StyledBox>
                 <StyledBox alignItems={"center"}>
@@ -103,74 +111,20 @@ const ContactDialog = (props) => {
                   <Tooltip
                     style={{ marginLeft: "auto" }}
                     title={
-                      <StyledPara fontSize={"13px"}>Kopier teksten</StyledPara>
+                      <StyledPara fontSize={"13px"}>
+                        Open Github in new tab
+                      </StyledPara>
                     }
                   >
-                    <IconButton>
-                      <StyledCopy />
-                    </IconButton>
+                    <a href="https://github.com/stevenhgn" target="_blank">
+                      <IconButton>
+                        <Launch />
+                      </IconButton>
+                    </a>
                   </Tooltip>
                 </StyledBox>
               </DialogContentWrapper>
-              {!isNotDesktop ? (
-                <DialogContentWrapper>
-                  <StyledSpan mb={1}> Write me a mail</StyledSpan>
-                  <StyledBox mb={1}>
-                    <StyledTextFieldMedia
-                      fullWidth
-                      label={"Name"}
-                      autoFocus
-                      variant={"filled"}
-                    >
-                      Name
-                    </StyledTextFieldMedia>
-                  </StyledBox>
-                  <StyledBox>
-                    <StyledTextFieldMedia
-                      label={"Description"}
-                      variant={"filled"}
-                      fullWidth
-                      rows={5}
-                      multiline
-                    >
-                      Description
-                    </StyledTextFieldMedia>
-                  </StyledBox>
-                  <StyledBox mt={1}>
-                    <Button>SUBMIT</Button>
-                  </StyledBox>
-                </DialogContentWrapper>
-              ) : null}
             </StyledBox>
-            {isNotDesktop ? (
-              <DialogContentWrapper style={{ alignItems: "center" }}>
-                <StyledSpan mb={1}> Write me a mail</StyledSpan>
-                <StyledBox mb={1}>
-                  <StyledTextFieldMedia
-                    label={"Name"}
-                    fullWidth
-                    autoFocus
-                    variant={"filled"}
-                  >
-                    Name
-                  </StyledTextFieldMedia>
-                </StyledBox>
-                <StyledBox mb={2}>
-                  <StyledTextFieldMedia
-                    label={"Description"}
-                    fullWidth
-                    variant={"filled"}
-                    multiline
-                    rows={5}
-                  >
-                    Description
-                  </StyledTextFieldMedia>
-                </StyledBox>
-                <StyledBox mt={1}>
-                  <Button>SUBMIT</Button>
-                </StyledBox>
-              </DialogContentWrapper>
-            ) : null}
           </DialogCardWrapper>
           <StyledSpan style={{ flex: 2 }}></StyledSpan>
         </StyledBox>
@@ -207,45 +161,6 @@ const DialogContentWrapper = styled(DialogContent)`
     max-height:250px;
 `};
   /* min-width:300px; */
-`;
-const StyledTextFieldMedia = styled(TextField)`
-  ${palette}
-  ${spacing}
-  ${typography}
-    
-  .MuiInputBase-input{
-    font-size:"1vw";
-    color: black;
-  }
-  .MuiFormLabel-root.Mui-disabled{
-    color: black;
-  }
-  .MuiFilledInput-underline:after {
-  }
-
-  ${media.greaterThan("large")`
-        /* screen width is greater than 1170px (large) */
-        min-width:150px;
-        max-width:300px;
-        /* min-height:150px; */
-        max-height:150px;
-        
-  `};
-    ${media.lessThan("medium")`
-    /* screen width is less than 768px (medium) */
-        min-width:100px;
-        max-width:180px;
-        min-height:60px;
-        max-height:100px;
-    `};
-    ${media.between("medium", "large")`
-        /* screen width is between 768px (medium) and 1170px (large) */
-        /* min-width:50px;
-        max-width:150px;
-        min-height:10px;
-        max-height:150px; */
-        /* width: 40%; */
-    `};
 `;
 
 const DialogMedia = styled(Dialog)``;
