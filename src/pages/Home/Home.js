@@ -1,5 +1,7 @@
 import React, { forwardRef, useRef, useState } from "react";
 import styled from "styled-components";
+import { Link, animateScroll as scroll } from "react-scroll";
+
 import { spacing, palette } from "@material-ui/system";
 import { Toolbar, Tooltip } from "@material-ui/core";
 import {
@@ -121,14 +123,25 @@ const Home = () => {
               >
                 <StyledBox color={"white"}>Experience</StyledBox>
               </LinkWrapper>
-              <LinkWrapper
+              {/* <LinkWrapper
                 pl={"2vw"}
                 to={"/Projects"}
                 // fontSize={"2vw"}
                 onClick={() => scrollToRef(projectsRef)}
+              > */}
+              <Link
+                style={{ paddingLeft: "2vw" }}
+                activeClass="active"
+                to="Projects"
+                spy={true}
+                smooth={true}
+                offset={-70}
+                duration={500}
               >
                 <StyledBox color={"white"}>Projects</StyledBox>
-              </LinkWrapper>
+              </Link>
+
+              {/* </LinkWrapper> */}
               <LinkWrapper
                 pl={"2vw"}
                 to={"/Contacts"}

@@ -23,10 +23,11 @@ const Projects = forwardRef((props, ref) => {
     {
       label: "VISMA",
       title: "VISMA SYNTH",
-      description:"Prosjektet for Visma Consulting AS gikk ut på å lage et system for syntetisering av testdata. " + 
-        "Målet var å lage en løsning som tillater brukere å enkelt generere testdata som ikke gjør noen kompromisser på personvern og gjør at man får testet løsninger uten å måtte forholde seg til data som inneholder person-sensitiv informasjon. " + 
-        "Løsningen består av tre deler, en generator for identiteter, en backend for en generisk håndtering av generering av data, og en frontend - applikasjon lar brukere se og opprette personer for bruk i testmiljøer. " 
-        + " Med tidligere erfaring innen Frontend har jeg gjennom prosjektet fått rollen som frontend-leder med ansvaret på å passe på at oppgavene innenfor frontend blir gjort i henhold til planen, hjelpe andre i teamet med tips og løsningsforslag, og sist men ikke minst bidra til som utvikler.",
+      description:
+        "Prosjektet for Visma Consulting AS gikk ut på å lage et system for syntetisering av testdata. " +
+        "Målet var å lage en løsning som tillater brukere å enkelt generere testdata som ikke gjør noen kompromisser på personvern og gjør at man får testet løsninger uten å måtte forholde seg til data som inneholder person-sensitiv informasjon. " +
+        "Løsningen består av tre deler, en generator for identiteter, en backend for en generisk håndtering av generering av data, og en frontend - applikasjon lar brukere se og opprette personer for bruk i testmiljøer. " +
+        " Med tidligere erfaring innen Frontend har jeg gjennom prosjektet fått rollen som frontend-leder med ansvaret på å passe på at oppgavene innenfor frontend blir gjort i henhold til planen, hjelpe andre i teamet med tips og løsningsforslag, og sist men ikke minst bidra til som utvikler.",
       titleColor: "contentRed",
       techUsed: [
         "#react",
@@ -211,7 +212,7 @@ const Projects = forwardRef((props, ref) => {
   };
 
   return (
-    <Wrapper ref={ref} className={"ProjectsRoot"}>
+    <Wrapper ref={ref} className={"ProjectsRoot"} id={"Projects"}>
       <StyledBox pt={isNotDesktop ? 8 : 15} justifyContent={"center"}>
         <StyledText color={"greyBlueTint"}>PROJECTS</StyledText>
       </StyledBox>
