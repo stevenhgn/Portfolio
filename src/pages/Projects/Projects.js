@@ -21,6 +21,30 @@ import ProjectCardV2 from "../../components/ProjectCardV2/ProjectCardV2";
 const Projects = forwardRef((props, ref) => {
   const projectList = [
     {
+      label: "VISMA",
+      title: "VISMA SYNTH",
+      description:"Prosjektet for Visma Consulting AS gikk ut på å lage et system for syntetisering av testdata. " + 
+        "Målet var å lage en løsning som tillater brukere å enkelt generere testdata som ikke gjør noen kompromisser på personvern og gjør at man får testet løsninger uten å måtte forholde seg til data som inneholder person-sensitiv informasjon. " + 
+        "Løsningen består av tre deler, en generator for identiteter, en backend for en generisk håndtering av generering av data, og en frontend - applikasjon lar brukere se og opprette personer for bruk i testmiljøer. " 
+        + " Med tidligere erfaring innen Frontend har jeg gjennom prosjektet fått rollen som frontend-leder med ansvaret på å passe på at oppgavene innenfor frontend blir gjort i henhold til planen, hjelpe andre i teamet med tips og løsningsforslag, og sist men ikke minst bidra til som utvikler.",
+      titleColor: "contentRed",
+      techUsed: [
+        "#react",
+        "#.net",
+        "#azure-devops",
+        "#scrum",
+        "#figma",
+        "#restapi",
+        "#postman",
+      ],
+      imgLogo: "/logo/Visma-logo.png",
+      alterImageExpand: "/alterLogo/Visma_expand.png",
+      alterImageSmall: "/alterLogo/Visma_small.png",
+      date: "Summer 2020",
+      downloadAttest: "",
+      index: 4,
+    },
+    {
       label: "INTERKODEX",
       title: "NRF",
       fullTitle: "Norske Rørgrossisters Forening",
@@ -75,7 +99,7 @@ const Projects = forwardRef((props, ref) => {
       title: "RENAS",
       underTitle: "Avfallsdb",
       description:
-        "RENAS er Norges ledende EE-returselskap. Løsningen er en avfallsdatabase hvor kunden kan håndtere leveranser, eksport og håndtering av avfall. Den har eksistert i over en 5-6 årsperiode. Kunden har blant annet hatt et ønske om å modernisere løsningen, og da har jeg vært med på hjelpe dem med dette ved å blant annet skrive om gammel jQuery code over til Angular.",
+        "RENAS er Norges ledende EE-returselskap. Løsningen er en avfallsdatabase hvor kunden kan håndtere leveranser, eksport og håndtering av avfall. Den har eksistert i over en 5-6 årsperiode. Kunden har blant annet hatt et ønske om å modernisere løsningen, og en del av jobben var å hjelpe dem med dette ved å blant annet skrive om gammel jQuery code over til Angular.",
       titleColor: "contentRed",
       techUsed: [
         "#angular",
@@ -99,7 +123,7 @@ const Projects = forwardRef((props, ref) => {
       title: "RENAS",
       underTitle: "Minside",
       description:
-        "RENAS minside er administrasjonsside for ansatte og medlemmene. Løsningen inneholder blant annet statistikk, email og faktureringsmuligheter. Kunden hadde også det samme problemet om å få modernisert løsning, og da har jeg hjulpet dem med å løse dette ved å blant annet konverte jQuery code om til Angular.",
+        "RENAS minside er administrasjonsside for ansatte og medlemmene. Løsningen inneholder blant annet statistikk, email og faktureringsmuligheter. Kunden hadde også det samme problemet om å få modernisert løsning. Min rolle og ansvar som utvikler her er samme som i RENAS-avfallsdb, og det var å skrive om gammel jQuery kode til Angular.",
       titleColor: "contentRed",
       techUsed: [
         "#angular",
@@ -121,28 +145,7 @@ const Projects = forwardRef((props, ref) => {
       downloadAttest: "",
       index: 3,
     },
-    {
-      label: "VISMA",
-      title: "VISMA SYNTH",
-      description:
-        "Prosjektet for Visma Consulting AS gikk ut på å lage et system for syntetisering av testdata. Målet var å lage en løsning som tillater brukere å enkelt generere testdata som ikke gjør noen kompromisser på personvern og gjør at man får testet løsninger uten å måtte forholde seg til data som inneholder person-sensitiv informasjon.Løsningen består av tre deler, en generator for identiteter, en backend for en generisk håndtering av generering av data, og en frontend - applikasjon lar brukere se og opprette personer for bruk i testmiljøer.",
-      titleColor: "contentRed",
-      techUsed: [
-        "#react",
-        "#.net",
-        "#azure-devops",
-        "#scrum",
-        "#figma",
-        "#restapi",
-        "#postman",
-      ],
-      imgLogo: "/logo/Visma-logo.png",
-      alterImageExpand: "/alterLogo/Visma_expand.png",
-      alterImageSmall: "/alterLogo/Visma_small.png",
-      date: "Summer 2020",
-      downloadAttest: "",
-      index: 4,
-    },
+
     {
       label: "PERSONAL PROJECT",
       title: "MUNCHIES",
