@@ -29,10 +29,10 @@ const ProjectCardV2 = (props) => {
         <StyledBox flexDirection={"column"}>
           <StyledImage
             src={props.item.alterImageSmall}
-            // onMouseOver={(e) =>
-            //   //   (e.currentTarget.src = require("../../../public/pattern/RENAS_Pattern_small.png"))
-            //   (e.currentTarget.src = props.item.alterImageExpand)
-            // }
+            onMouseOver={(e) =>
+              //   (e.currentTarget.src = require("../../../public/pattern/RENAS_Pattern_small.png"))
+              (e.currentTarget.src = props.item.alterImageExpand)
+            }
             onMouseOut={(e) =>
               (e.currentTarget.src = props.item.alterImageSmall)
             }
@@ -77,11 +77,6 @@ const StyledImage = styled.img`
     ${spacing}
     ${typography}
     align-self: center;
-
-    ${media.greaterThan("large")`
-      min-width:300px;
-      max-width:300px;
-    `};
     ${media.lessThan("medium")`
     /* screen width is less than 768px (medium) */
         min-width:90px;
@@ -90,6 +85,18 @@ const StyledImage = styled.img`
         max-height:160px;
         
     `};
+    @media screen and (max-width: 768px) , screen and (max-height: 700px) {
+      /* background-color:red; */
+        min-width:90px;
+        max-width:130px;
+        min-height:90px;
+        max-height:160px;
+    }
+    ${media.greaterThan("large")`
+      min-width:300px;
+      max-width:300px;
+    `};
+    
     ${media.between("medium", "large")`
     /* screen width is less than 768px (medium) */
         min-width:180px;
@@ -133,7 +140,6 @@ const StyledTextFieldMedia = styled(TextField)`
         max-width:180px;
         min-height:100px;
         max-height:150px;
-        
         
     `};
     ${media.between("medium", "large")`

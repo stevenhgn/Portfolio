@@ -72,6 +72,7 @@ const Home = () => {
     const currPageIndex = Math.round(window.pageYOffset / window.innerHeight);
     if (currPageIndex > 0) {
       scrollToRef(pageList[currPageIndex - 1]);
+      // this.scrollv.croll
       setCurrPage(currPageIndex - 1);
     }
   };
@@ -176,10 +177,10 @@ const Home = () => {
             </Tooltip>
           </StyledIconButton>
 
-          <HomeScreen ref={homeScreenRef} />
-          <About ref={aboutRef} />
-          <Experiences ref={expRef} />
-          <Projects ref={projectsRef} />
+          <HomeScreen ref={homeScreenRef} scrollToOverflowEnabled={true} />
+          <About ref={aboutRef} scrollToOverflowEnabled={true} />
+          <Experiences ref={expRef} scrollToOverflowEnabled={true} />
+          <Projects ref={projectsRef} scrollToOverflowEnabled={true} />
         </ContentWrapper>
       </Router>
       {openContact && <ContactDialog handleCloseDialog={handleCloseDialog} />}
