@@ -90,9 +90,13 @@ const Home = () => {
         <NavBarSticker id={"stickyNavbar"}>
           <StyledNavbar bgcolor={"black"}>
             <LinkWrapperDesktop
-              to={"/"}
               fontSize={"2vw"}
-              onClick={() => scrollToRef(homeScreenRef)}
+              activeClass={"active"}
+              to="HomeScreen"
+              spy={true}
+              smooth={true}
+              offset={-70}
+              duration={500}
             >
               <StyledBox color={"white"}>Steven Nguyen</StyledBox>
             </LinkWrapperDesktop>
@@ -103,35 +107,40 @@ const Home = () => {
                 ml={0}
                 style={{ position: "fixed", left: 10 }}
                 pr={"4vw"}
-                onClick={() => scrollToRef(homeScreenRef)}
+                activeClass={"active"}
+                to="HomeScreen"
+                spy={true}
+                smooth={true}
+                offset={-70}
+                duration={500}
               >
                 <StyledBox color={"white"}>Steven Nguyen</StyledBox>
               </LinkWrapperPhone>
               <LinkWrapper
-                pl={"2vw"}
-                to={"/Aboutme"}
-                // fontSize={"2vw"}
-                onClick={() => scrollToRef(aboutRef)}
+                activeClass={"active"}
+                ml={"2vw"}
+                to={"Aboutme"}
+                spy={true}
+                smooth={true}
+                offset={-70}
+                duration={500}
               >
                 <StyledBox color={"white"}>About me</StyledBox>
               </LinkWrapper>
               <LinkWrapper
-                pl={"2vw"}
-                to={"/Experience"}
-                // fontSize={"2vw"}
-                onClick={() => scrollToRef(expRef)}
+                activeClass={"active"}
+                ml={"2vw"}
+                to={"Experience"}
+                spy={true}
+                smooth={true}
+                offset={-70}
+                duration={500}
               >
                 <StyledBox color={"white"}>Experience</StyledBox>
               </LinkWrapper>
-              {/* <LinkWrapper
-                pl={"2vw"}
-                to={"/Projects"}
-                // fontSize={"2vw"}
-                onClick={() => scrollToRef(projectsRef)}
-              > */}
-              <Link
-                style={{ paddingLeft: "2vw" }}
-                activeClass="active"
+              <LinkWrapper
+                ml={"2vw"}
+                activeClass={"active"}
                 to="Projects"
                 spy={true}
                 smooth={true}
@@ -139,11 +148,9 @@ const Home = () => {
                 duration={500}
               >
                 <StyledBox color={"white"}>Projects</StyledBox>
-              </Link>
-
-              {/* </LinkWrapper> */}
+              </LinkWrapper>
               <LinkWrapper
-                pl={"2vw"}
+                ml={"2vw"}
                 to={"/Contacts"}
                 onClick={handleOpenDialog}
                 // onClick={() => scrollToRef()}

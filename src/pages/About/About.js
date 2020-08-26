@@ -46,7 +46,7 @@ const About = forwardRef((props, ref) => {
     <ContentWrapper flex={1} key={2}></ContentWrapper>,
   ];
   return (
-    <Wrapper ref={ref} className={"AboutRoot"}>
+    <Wrapper ref={ref} className={"AboutRoot"} id={"Aboutme"}>
       <StyledBox
         flexDirection={"row"}
         className={"Title&logo"}

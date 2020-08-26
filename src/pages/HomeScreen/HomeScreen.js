@@ -19,7 +19,7 @@ const HomeScreen = forwardRef((props, ref) => {
     setShowHelperBox(false);
   };
   return (
-    <Wrapper ref={ref}>
+    <Wrapper ref={ref} id="HomeScreen">
       <MainPageTitle color={"lightgrey"} fontSize={"80px"}>
         {/* a portfolio. */}
         Hi, I'm Steven! <br />

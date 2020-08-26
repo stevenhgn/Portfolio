@@ -1,10 +1,11 @@
-import { Link } from "react-router-dom";
+import { Link, animateScroll as scroll } from "react-scroll";
 import styled from "styled-components";
 import media from "styled-media-query";
 
 import { Box, TextField, IconButton } from "@material-ui/core";
 import { spacing, palette, typography } from "@material-ui/system";
 import { Fragment } from "react";
+import themes from "./theme";
 const StyledBox = styled(Box)`
   ${spacing}
   ${palette}
@@ -90,6 +91,10 @@ const LinkWrapper = styled(Link)`
   ${palette}
   ${typography}
   text-decoration: none;
+
+  :hover {
+    border-bottom: 2px solid ${themes.standard.palette.lightCoral}; 
+  }
 `;
 const LinkWrapperPhone = styled(Link)`
   ${spacing}
