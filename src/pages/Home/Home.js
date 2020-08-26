@@ -194,7 +194,13 @@ const HomeWrapper = styled.div`
   width: 100vw;
   display: flex;
   flex-direction: column;
+  -webkit-overflow-scrolling: "touch";
   flex: 1;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  overflow-y: "auto";
 `;
 const ContentWrapper = styled.div`
   ${spacing}
