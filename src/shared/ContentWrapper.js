@@ -91,7 +91,7 @@ const LinkWrapper = styled(Link)`
   ${palette}
   ${typography}
   text-decoration: none;
-
+  cursor: pointer;
   :hover {
     border-bottom: 2px solid ${themes.standard.palette.lightCoral}; 
   }
@@ -101,7 +101,6 @@ const LinkWrapperPhone = styled(Link)`
   ${palette}
   ${typography}
   text-decoration: none;
-  
   ${media.lessThan("medium")`
     /* screen width is less than 768px (medium) */
     font-size:13px;
@@ -122,6 +121,7 @@ const LinkWrapperDesktop = styled(Link)`
   ${palette}
   ${typography}
   text-decoration: none;
+  cursor: pointer;
   ${media.lessThan("medium")`
     /* screen width is less than 768px (medium) */
     display:none;

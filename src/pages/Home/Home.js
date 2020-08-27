@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { Link, animateScroll as scroll } from "react-scroll";
 
 import { spacing, palette } from "@material-ui/system";
-import { Toolbar, Tooltip } from "@material-ui/core";
+import { Toolbar, Tooltip, Button } from "@material-ui/core";
 import {
   StyledBox,
   LinkWrapper,
