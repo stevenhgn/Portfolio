@@ -7,6 +7,7 @@ import media from "styled-media-query";
 import themes from "../../shared/theme";
 import { Snackbar } from "@material-ui/core";
 import { StyledAlert } from "../../shared/Alert";
+import "./homeScreen.css";
 
 const HomeScreen = forwardRef((props, ref) => {
   const [showHelperBox, setShowHelperBox] = useState(false);
@@ -20,13 +21,15 @@ const HomeScreen = forwardRef((props, ref) => {
   };
   return (
     <Wrapper ref={ref} id="HomeScreen">
-      <MainPageTitle color={"lightgrey"} fontSize={"80px"}>
-        {/* a portfolio. */}
-        Hi, I'm Steven! <br />
-        <MainPageUnderTitle color={"grey"}>
+      <div className={"titleContainer"}>
+        <h1 className={"title"}>
+          {/* a portfolio. */}
+          Hi, I'm Steven! <br />
+        </h1>
+        <p className={"underTitle"}>
           A fullstack developer with a slightly bigger passion for frontend.
-        </MainPageUnderTitle>
-      </MainPageTitle>
+        </p>
+      </div>
       <Snackbar
         anchorOrigin={{ vertical: "top", horizontal: "center" }}
         open={showHelperBox}

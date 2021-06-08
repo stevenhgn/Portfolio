@@ -40,11 +40,12 @@ const Home = () => {
   const expRef = React.createRef();
   const projectsRef = React.createRef();
   var start = 0;
-  const [currPage, setCurrPage] = useState(0);
+  const [currTest, setCurrTest] = useState("");
   const [openContact, setOpenContact] = useState(false);
   const initalHeight = window.innerHeight;
   var windowInnerHeight = window.innerHeight;
   const pageList = [homeScreenRef, aboutRef, expRef, projectsRef];
+  const pageListString = ["HomeScreen", "Aboutme", "Experience", "Projects"];
   window.onscroll = function () {
     myFunction();
   };
@@ -62,20 +63,22 @@ const Home = () => {
       arrowUp.classList.remove("sticky");
     }
   }
-
+  const test = () => {
+    return "Projects";
+  };
   const handleArrowDown = () => {
     const currPageIndex = Math.round(window.pageYOffset / window.innerHeight);
     if (currPageIndex < pageList.length - 1) {
-      scrollToRef(pageList[currPageIndex + 1]);
-      setCurrPage(currPageIndex + 1);
+      // scrollToRef(pageList[currPageIndex + 1]);
+      setCurrTest(pageListString[currPageIndex + 1]);
     }
   };
   const handleArrowUp = () => {
     const currPageIndex = Math.round(window.pageYOffset / window.innerHeight);
     if (currPageIndex > 0) {
-      scrollToRef(pageList[currPageIndex - 1]);
+      setCurrTest(pageListString[currPageIndex - 1]);
+      // scrollToRef(pageList[currPageIndex - 1]);
       // this.scrollv.croll
-      setCurrPage(currPageIndex - 1);
     }
   };
   const handleOpenDialog = (bool) => {
@@ -172,13 +175,23 @@ const Home = () => {
               width: "100vw",
             }}
           >
-            <Tooltip
-              title={
-                <StyledPara fontSize={"large"}>Scroll to previous</StyledPara>
-              }
+            <LinkWrapper
+              ml={"2vw"}
+              activeClass={"active"}
+              to={currTest}
+              spy={true}
+              smooth={true}
+              offset={-70}
+              duration={1000}
             >
-              <StyledArrowUp fontSize={"large"}></StyledArrowUp>
-            </Tooltip>
+              <Tooltip
+                title={
+                  <StyledPara fontSize={"large"}>Scroll to previous</StyledPara>
+                }
+              >
+                <StyledArrowUp fontSize={"large"}></StyledArrowUp>
+              </Tooltip>
+            </LinkWrapper>
           </StyledIconButton>
           <StyledIconButton
             onClick={handleArrowDown}
@@ -190,11 +203,23 @@ const Home = () => {
               width: "100vw",
             }}
           >
-            <Tooltip
-              title={<StyledPara fontSize={"large"}>Scroll to next</StyledPara>}
+            <LinkWrapper
+              ml={"2vw"}
+              activeClass={"active"}
+              to={currTest}
+              spy={true}
+              smooth={true}
+              offset={-70}
+              duration={500}
             >
-              <StyledArrowDown fontSize={"large"}></StyledArrowDown>
-            </Tooltip>
+              <Tooltip
+                title={
+                  <StyledPara fontSize={"large"}>Scroll to next</StyledPara>
+                }
+              >
+                <StyledArrowDown fontSize={"large"}></StyledArrowDown>
+              </Tooltip>
+            </LinkWrapper>
           </StyledIconButton>
 
           <HomeScreen ref={homeScreenRef} scrollToOverflowEnabled={true} />

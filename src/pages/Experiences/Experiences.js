@@ -63,13 +63,14 @@ const Experiences = forwardRef((props, ref) => {
   });
   const isNotDesktop = window.innerWidth < 768;
   return (
-    <Wrapper ref={ref} className={"SkillsRoot"} id={"Experience"}>
+    <Wrapper ref={ref} className={"SkillsRoot"}>
       <StyledBox
         pt={5}
         pl={"3vw"}
         justifyContent={isNotDesktop ? "center" : null}
       >
         <StyledText
+          id={"Experience"}
           color={"white"}
           fontSize={isNotDesktop ? "6vw" : "4vw"}
           pt={"4vw"}

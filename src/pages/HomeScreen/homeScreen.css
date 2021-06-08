@@ -1,0 +1,81 @@
+:root {
+  --background-color: #252525;
+  --typewriterSpeed: 6s;
+}
+
+.titleContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
+}
+.underTitle {
+  color: lightcoral;
+}
+.underTitle,
+.title {
+  font-size: clamp(1rem, 3vw + 1rem, 4rem);
+  font-weight: 200;
+  margin: 0;
+  max-width: 700px;
+  white-space: pre-wrap;
+  position: relative;
+}
+.title {
+  color: white;
+  width: max-content;
+}
+
+.title::before,
+.title::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.title::before {
+  background: var(--background-color);
+  animation: typewriter var(--typewriterSpeed) steps(16) 1s infinite;
+}
+.title::after {
+  width: 0.125em;
+  background: white;
+  animation: typewriter var(--typewriterSpeed) steps(16) 1s infinite,
+    blink 750ms steps(16) infinite;
+}
+
+@keyframes typewriter {
+  55%,
+  100% {
+    left: 100%;
+  }
+}
+
+@keyframes blink {
+  55%,
+  100% {
+    background: transparent;
+  }
+}
+
+@media only screen and (min-width: 1170px) {
+  .title {
+    font-size: 3vw;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .title {
+    font-size: 6vw;
+  }
+  .titleContainer {
+    margin: 0 25px 0 25px;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 768px) {
+  .title {
+    font-size: 5vw;
+  }
+}
