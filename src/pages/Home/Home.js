@@ -40,7 +40,7 @@ const Home = () => {
   const expRef = React.createRef();
   const projectsRef = React.createRef();
   var start = 0;
-  const [currTest, setCurrTest] = useState("");
+  const [currTest, setCurrTest] = useState("HomeScreen");
   const [openContact, setOpenContact] = useState(false);
   const initalHeight = window.innerHeight;
   var windowInnerHeight = window.innerHeight;
@@ -52,15 +52,19 @@ const Home = () => {
 
   function myFunction() {
     const navbar = document.getElementById("stickyNavbar");
-    const arrowUp = document.getElementById("stickyNavigationArrow");
+    // const arrowUp = document.getElementById("stickyNavigationArrow");
     const sticky = navbar.offsetTop;
 
     if (window.pageYOffset >= sticky) {
-      navbar.classList.add("sticky");
-      arrowUp.classList.add("sticky");
+      if (navbar && navbar.classList !== null) {
+        navbar.classList.add("sticky");
+        // arrowUp.classList.add("sticky");
+      }
     } else {
-      navbar.classList.remove("sticky");
-      arrowUp.classList.remove("sticky");
+      if (navbar && navbar.classList) {
+        navbar.classList.remove("sticky");
+        // arrowUp.classList.remove("sticky");
+      }
     }
   }
   const test = () => {
@@ -68,9 +72,11 @@ const Home = () => {
   };
   const handleArrowDown = () => {
     const currPageIndex = Math.round(window.pageYOffset / window.innerHeight);
+    console.log("currPageIndex: ", currPageIndex);
     if (currPageIndex < pageList.length - 1) {
       // scrollToRef(pageList[currPageIndex + 1]);
       setCurrTest(pageListString[currPageIndex + 1]);
+      return pageListString[currPageIndex + 1];
     }
   };
   const handleArrowUp = () => {
@@ -78,7 +84,6 @@ const Home = () => {
     if (currPageIndex > 0) {
       setCurrTest(pageListString[currPageIndex - 1]);
       // scrollToRef(pageList[currPageIndex - 1]);
-      // this.scrollv.croll
     }
   };
   const handleOpenDialog = (bool) => {
@@ -165,7 +170,7 @@ const Home = () => {
         </NavBarSticker>
 
         <ContentWrapper>
-          <StyledIconButton
+          {/* <StyledIconButton
             onClick={handleArrowUp}
             id={"stickyNavigationArrow"}
             style={{
@@ -178,7 +183,7 @@ const Home = () => {
             <LinkWrapper
               ml={"2vw"}
               activeClass={"active"}
-              to={currTest}
+              to={handleArrowUp()}
               spy={true}
               smooth={true}
               offset={-70}
@@ -220,7 +225,7 @@ const Home = () => {
                 <StyledArrowDown fontSize={"large"}></StyledArrowDown>
               </Tooltip>
             </LinkWrapper>
-          </StyledIconButton>
+          </StyledIconButton> */}
 
           <HomeScreen ref={homeScreenRef} scrollToOverflowEnabled={true} />
           <About ref={aboutRef} scrollToOverflowEnabled={true} />
