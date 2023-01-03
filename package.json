@@ -12,9 +12,9 @@
     "node-sass": "^7.0.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-hot-loader": "^4.12.21",
+    "react-hot-loader": "^4.13.1",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "3.4.1",
+    "react-scripts": "5.0.1",
     "react-scroll": "^1.8.1",
     "styled-components": "^5.1.1",
     "styled-media-query": "^2.1.2"
@@ -46,6 +46,6 @@
     "node-sass": "^7.0.0",
     "prettier": "2.0.5",
     "prettier-eslint": "^11.0.0",
-    "webpack": "^4.44.0"
+    "webpack": "^5.75.0"
   }
 }
