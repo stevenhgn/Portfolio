@@ -20,16 +20,16 @@ export default function Mountains() {
       scale: [number, number, number];
       shade: number;
     }[] = [];
-    const count = 26;
+    const count = 30;
     for (let i = 0; i < count; i++) {
-      const a = (i / count) * Math.PI * 2 + rand() * 0.18;
-      const r = 60 + rand() * 12;
+      const a = (i / count) * Math.PI * 2 + (rand() - 0.5) * 0.16;
+      const r = 58 + rand() * 14;
       const x = Math.cos(a) * r;
       const z = Math.sin(a) * r;
-      const h = 8 + rand() * 14;
-      const w = 6 + rand() * 6;
+      const h = 7 + rand() * 12;
+      const w = 7 + rand() * 8;
       out.push({
-        position: [x, 0, z],
+        position: [x, -1, z],
         rotation: rand() * Math.PI * 2,
         scale: [w, h, w],
         shade: rand(),
@@ -47,10 +47,9 @@ export default function Mountains() {
           rotation={[0, p.rotation, 0]}
           scale={p.scale}
         >
-          <coneGeometry args={[1, 1, 5]} />
+          <icosahedronGeometry args={[1, 0]} />
           <meshStandardMaterial
-            color={p.shade > 0.6 ? "#3a3550" : "#2c2a45"}
-            flatShading
+            color={p.shade > 0.55 ? "#3a3550" : "#2c2a45"}
             roughness={1}
           />
         </mesh>

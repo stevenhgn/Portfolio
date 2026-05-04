@@ -18,13 +18,13 @@ export default function WorkplacesRoom() {
       <RigidBody type="fixed" colliders={false}>
         <mesh castShadow receiveShadow position={[-3, 0.4, -3]}>
           <boxGeometry args={[2, 0.8, 1]} />
-          <meshStandardMaterial color="#7a5c3a" flatShading />
+          <meshStandardMaterial color="#7a5c3a" roughness={0.85} />
         </mesh>
         <CuboidCollider args={[1, 0.4, 0.5]} position={[-3, 0.4, -3]} />
 
         <mesh castShadow receiveShadow position={[3, 0.6, -3]}>
           <boxGeometry args={[1.2, 1.2, 0.4]} />
-          <meshStandardMaterial color="#5b4a3a" flatShading />
+          <meshStandardMaterial color="#5b4a3a" roughness={0.85} />
         </mesh>
         <CuboidCollider args={[0.6, 0.6, 0.2]} position={[3, 0.6, -3]} />
       </RigidBody>

@@ -74,7 +74,7 @@ export default function Telescope({ id, position, accent }: Props) {
       <group ref={groupRef}>
         <mesh castShadow position={[0, 0.4, 0]}>
           <cylinderGeometry args={[0.05, 0.4, 0.8, 6]} />
-          <meshStandardMaterial color="#222" flatShading />
+          <meshStandardMaterial color="#222" roughness={0.7} />
         </mesh>
         {[0, 1, 2].map((i) => (
           <mesh
@@ -88,22 +88,22 @@ export default function Telescope({ id, position, accent }: Props) {
             rotation={[0, (i / 3) * Math.PI * 2, Math.PI / 8]}
           >
             <cylinderGeometry args={[0.04, 0.04, 1.4, 6]} />
-            <meshStandardMaterial color="#3a3a3a" flatShading />
+            <meshStandardMaterial color="#3a3a3a" roughness={0.7} />
           </mesh>
         ))}
 
         <group position={[0, 1.2, 0]} rotation={[tilt, 0, 0]}>
           <mesh castShadow>
             <cylinderGeometry args={[0.18, 0.22, 1.6, 12]} />
-            <meshStandardMaterial color="#1f1f24" flatShading metalness={0.4} />
+            <meshStandardMaterial color="#1f1f24" roughness={0.7} metalness={0.4} />
           </mesh>
           <mesh castShadow position={[0, 0.85, 0]}>
             <cylinderGeometry args={[0.26, 0.22, 0.18, 12]} />
-            <meshStandardMaterial color={accent} flatShading metalness={0.5} />
+            <meshStandardMaterial color={accent} roughness={0.7} metalness={0.5} />
           </mesh>
           <mesh castShadow position={[0, -0.85, 0]}>
             <cylinderGeometry args={[0.14, 0.16, 0.18, 12]} />
-            <meshStandardMaterial color="#0a0a0a" flatShading />
+            <meshStandardMaterial color="#0a0a0a" roughness={0.7} />
           </mesh>
           <object3D ref={eyepieceRef} position={[0, -1.0, 0]} />
           <object3D ref={focusRef} position={[0, 14, 0]} />

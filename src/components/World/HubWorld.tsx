@@ -21,15 +21,15 @@ export default function HubWorld() {
 
       {/* Hub centerpiece — small lantern */}
       <mesh castShadow position={[0, 0.2, 0]}>
-        <cylinderGeometry args={[0.45, 0.6, 0.4, 8]} />
-        <meshStandardMaterial color="#3a3a3a" flatShading />
+        <cylinderGeometry args={[0.45, 0.6, 0.4, 24]} />
+        <meshStandardMaterial color="#3a3a3a" roughness={0.85} />
       </mesh>
       <mesh castShadow position={[0, 0.9, 0]}>
-        <cylinderGeometry args={[0.18, 0.18, 0.9, 6]} />
-        <meshStandardMaterial color="#2a2a2a" flatShading />
+        <cylinderGeometry args={[0.18, 0.18, 0.9, 16]} />
+        <meshStandardMaterial color="#2a2a2a" roughness={0.85} />
       </mesh>
       <mesh position={[0, 1.5, 0]}>
-        <sphereGeometry args={[0.22, 12, 12]} />
+        <sphereGeometry args={[0.22, 16, 16]} />
         <meshBasicMaterial color="#ffd987" toneMapped={false} />
       </mesh>
       <pointLight

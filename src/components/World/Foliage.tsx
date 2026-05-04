@@ -65,58 +65,73 @@ function generateItems(
 
 const TRUNK_COLOR = new THREE.Color("#3d2a1a");
 const LEAF_COLORS = [
-  new THREE.Color("#3a6b3a"),
-  new THREE.Color("#4d7a4a"),
-  new THREE.Color("#2f5a3a"),
+  new THREE.Color("#4d7d4a"),
+  new THREE.Color("#5a8a52"),
+  new THREE.Color("#3e6c40"),
 ];
 
 export default function Foliage() {
   const trees = useMemo(() => generateItems(7, 80, 14, 48, [0.85, 1.6]), []);
-  const grass = useMemo(() => generateItems(11, 220, 4, 50, [0.4, 1.1]), []);
+  const grass = useMemo(() => generateItems(11, 180, 4, 50, [0.5, 1.1]), []);
 
-  const grassColor = useMemo(() => new THREE.Color("#4a6b3a"), []);
+  const grassColor = useMemo(() => new THREE.Color("#5a8a4a"), []);
 
   return (
     <group>
+      {/* Trunks — smooth-shaded cylinders */}
       <Instances limit={trees.length} castShadow>
-        <cylinderGeometry args={[0.18, 0.28, 1.6, 6]} />
-        <meshStandardMaterial color={TRUNK_COLOR} flatShading />
+        <cylinderGeometry args={[0.18, 0.28, 1.4, 12]} />
+        <meshStandardMaterial color={TRUNK_COLOR} roughness={0.95} />
         {trees.map((t, i) => (
           <Instance
             key={`trunk-${i}`}
-            position={[t.position[0], 0.8 * t.scale, t.position[2]]}
+            position={[t.position[0], 0.7 * t.scale, t.position[2]]}
             rotation={[0, t.rotation, 0]}
             scale={[t.scale, t.scale, t.scale]}
           />
         ))}
       </Instances>
 
+      {/* Main blob — large smooth icosahedron */}
       <Instances limit={trees.length} castShadow>
-        <coneGeometry args={[1.0, 2.4, 6]} />
-        <meshStandardMaterial vertexColors flatShading />
+        <icosahedronGeometry args={[1, 1]} />
+        <meshStandardMaterial vertexColors roughness={0.85} />
         {trees.map((t, i) => {
           const c = LEAF_COLORS[Math.floor(t.tone * LEAF_COLORS.length)];
           return (
             <Instance
-              key={`leaves-${i}`}
-              position={[t.position[0], 1.7 * t.scale + 0.7, t.position[2]]}
+              key={`blob-a-${i}`}
+              position={[t.position[0], 1.5 * t.scale + 0.3, t.position[2]]}
               rotation={[0, t.rotation, 0]}
-              scale={[t.scale, t.scale * 1.1, t.scale]}
+              scale={[
+                t.scale * 1.05,
+                t.scale * 1.15,
+                t.scale * 1.05,
+              ]}
               color={c}
             />
           );
         })}
       </Instances>
 
+      {/* Secondary blob — offset, slightly smaller */}
       <Instances limit={trees.length} castShadow>
-        <coneGeometry args={[0.7, 1.8, 6]} />
-        <meshStandardMaterial vertexColors flatShading />
+        <icosahedronGeometry args={[0.85, 1]} />
+        <meshStandardMaterial vertexColors roughness={0.85} />
         {trees.map((t, i) => {
-          const c = LEAF_COLORS[(Math.floor(t.tone * LEAF_COLORS.length) + 1) % LEAF_COLORS.length];
+          const c =
+            LEAF_COLORS[(Math.floor(t.tone * LEAF_COLORS.length) + 1) %
+              LEAF_COLORS.length];
+          const dx = Math.cos(t.rotation * 2.3) * 0.4 * t.scale;
+          const dz = Math.sin(t.rotation * 2.3) * 0.4 * t.scale;
           return (
             <Instance
-              key={`leaves2-${i}`}
-              position={[t.position[0], 2.5 * t.scale + 0.7, t.position[2]]}
+              key={`blob-b-${i}`}
+              position={[
+                t.position[0] + dx,
+                1.9 * t.scale + 0.4,
+                t.position[2] + dz,
+              ]}
               rotation={[0, t.rotation + 0.4, 0]}
               scale={[t.scale * 0.85, t.scale * 0.95, t.scale * 0.85]}
               color={c}
@@ -125,15 +140,16 @@ export default function Foliage() {
         })}
       </Instances>
 
+      {/* Grass tufts — soft squashed spheres */}
       <Instances limit={grass.length}>
-        <coneGeometry args={[0.18, 0.5, 4]} />
-        <meshStandardMaterial color={grassColor} flatShading />
+        <sphereGeometry args={[0.22, 8, 6]} />
+        <meshStandardMaterial color={grassColor} roughness={1} />
         {grass.map((g, i) => (
           <Instance
             key={`grass-${i}`}
-            position={[g.position[0], 0.25 * g.scale, g.position[2]]}
+            position={[g.position[0], 0.12 * g.scale, g.position[2]]}
             rotation={[0, g.rotation, 0]}
-            scale={[g.scale, g.scale, g.scale]}
+            scale={[g.scale * 1.2, g.scale * 0.55, g.scale * 1.2]}
           />
         ))}
       </Instances>

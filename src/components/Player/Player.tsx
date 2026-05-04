@@ -135,20 +135,20 @@ const Player = forwardRef<PlayerHandle, Props>(function Player(
       <CapsuleCollider args={[PLAYER_HEIGHT / 2 - PLAYER_RADIUS, PLAYER_RADIUS]} />
       <group ref={visualRef}>
         <mesh castShadow position={[0, 0.2, 0]}>
-          <capsuleGeometry args={[PLAYER_RADIUS, PLAYER_HEIGHT - PLAYER_RADIUS * 2, 4, 8]} />
-          <meshStandardMaterial color="#f5c45e" flatShading />
+          <capsuleGeometry args={[PLAYER_RADIUS, PLAYER_HEIGHT - PLAYER_RADIUS * 2, 8, 16]} />
+          <meshStandardMaterial color="#e8a25e" roughness={0.8} />
         </mesh>
-        <mesh castShadow position={[0, PLAYER_HEIGHT / 2 + 0.05, 0]}>
-          <boxGeometry args={[0.4, 0.4, 0.4]} />
-          <meshStandardMaterial color="#f7d99a" flatShading />
+        <mesh castShadow position={[0, PLAYER_HEIGHT / 2 + 0.08, 0]}>
+          <sphereGeometry args={[0.26, 16, 12]} />
+          <meshStandardMaterial color="#f0c9a0" roughness={0.85} />
         </mesh>
-        <mesh position={[0.08, PLAYER_HEIGHT / 2 + 0.1, 0.21]}>
-          <boxGeometry args={[0.06, 0.06, 0.02]} />
-          <meshStandardMaterial color="#222" />
+        <mesh position={[0.08, PLAYER_HEIGHT / 2 + 0.12, 0.22]}>
+          <sphereGeometry args={[0.04, 8, 8]} />
+          <meshStandardMaterial color="#1a1a1a" />
         </mesh>
-        <mesh position={[-0.08, PLAYER_HEIGHT / 2 + 0.1, 0.21]}>
-          <boxGeometry args={[0.06, 0.06, 0.02]} />
-          <meshStandardMaterial color="#222" />
+        <mesh position={[-0.08, PLAYER_HEIGHT / 2 + 0.12, 0.22]}>
+          <sphereGeometry args={[0.04, 8, 8]} />
+          <meshStandardMaterial color="#1a1a1a" />
         </mesh>
       </group>
     </RigidBody>
