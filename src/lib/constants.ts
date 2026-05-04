@@ -5,9 +5,9 @@ export const PLAYER_SPEED_MOBILE = 3.5;
 export const PLAYER_HEIGHT = 1.6;
 export const PLAYER_RADIUS = 0.35;
 
-export const CAMERA_OFFSET = new THREE.Vector3(0, 6, 9);
+export const CAMERA_OFFSET = new THREE.Vector3(0, 3.6, 6.8);
 export const CAMERA_LERP = 0.08;
-export const CAMERA_LOOK_OFFSET = new THREE.Vector3(0, 1.2, 0);
+export const CAMERA_LOOK_OFFSET = new THREE.Vector3(0, 1.5, 0);
 
 export const ROOM_IDS = ["workplaces", "projects", "hobbies"] as const;
 export type RoomId = (typeof ROOM_IDS)[number];
