@@ -1,0 +1,45 @@
+:root {
+  color-scheme: dark;
+  --bg: #0b0d12;
+  --fg: #e8ecf1;
+  --accent: #f5c45e;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background: var(--bg);
+  color: var(--fg);
+  font-family:
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    Roboto,
+    "Helvetica Neue",
+    Arial,
+    sans-serif;
+  overflow: hidden;
+  overscroll-behavior: none;
+}
+
+body {
+  touch-action: none;
+}
+
+#__next,
+main {
+  height: 100%;
+  width: 100%;
+}
+
+canvas {
+  display: block;
+  outline: none;
+}
